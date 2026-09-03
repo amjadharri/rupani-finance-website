@@ -1,0 +1,67 @@
+import { ButtonLink, Card, CardBody, CardTitle, Container, Eyebrow, Heading } from "@/components/ui";
+import { MediaFrame } from "@/components/sections";
+
+const capabilities = [
+  {
+    title: "Access quotes online",
+    body: "Instant access to quotes through the unique ONLINE-QUOTATION system, prompt and error free.",
+  },
+  {
+    title: "View customer accounts",
+    body: "View your customer accounts, right on your computer anywhere any time.",
+  },
+  {
+    title: "Accept payments",
+    body: "EFT / ACH, Credit Card, E-Payment accepted and print notices online.",
+    tone: "navy" as const,
+  },
+  {
+    title: "Print notices online",
+    body: "Print notices online this will surely save your valuable time and paper work.",
+  },
+  {
+    title: "Expert support",
+    body: "Excellent business support from Premium Finance experts, prepared to answer your question immediately and accurately.",
+  },
+];
+
+/** 05 / How we deliver — on the charcoal (red) band. */
+export function HowWeDeliver() {
+  return (
+    <section className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
+      <Container>
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <Eyebrow className="text-brand-on-dark-2">Our approach</Eyebrow>
+            <Heading className="mt-6 max-w-[460px]">How USIF delivers premium financing</Heading>
+          </div>
+
+          <div className="lg:justify-self-end lg:self-center">
+            <ButtonLink href="/apply" variant="on-dark" withArrow>
+              Lets Get You Funded
+            </ButtonLink>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((item) => (
+            <Card
+              key={item.title}
+              tone={item.tone ?? "on-red"}
+              className="flex min-h-[186px] flex-col"
+            >
+              <CardTitle>{item.title}</CardTitle>
+              <CardBody className="mt-3 text-brand-on-dark-2">{item.body}</CardBody>
+            </Card>
+          ))}
+
+          <MediaFrame
+            ratio="1 / 0.55"
+            label="Two people shaking hands over a signed contract"
+            className="h-full"
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}

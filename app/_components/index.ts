@@ -1,0 +1,9 @@
+export { Hero } from "./Hero";
+export { Statement } from "./Statement";
+export { WhoWeAre } from "./WhoWeAre";
+export { WhatWeFinance } from "./WhatWeFinance";
+export { HowWeDeliver } from "./HowWeDeliver";
+export { WhoWeServe } from "./WhoWeServe";
+export { OurRates } from "./OurRates";
+export { GetAQuote } from "./GetAQuote";
+export { Advantages } from "./Advantages";
