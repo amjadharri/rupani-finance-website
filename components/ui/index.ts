@@ -2,7 +2,7 @@ export { Container } from "./Container";
 export { Section, type SectionProps } from "./Section";
 export { Eyebrow } from "./Eyebrow";
 export { Heading, type HeadingProps } from "./Heading";
-export { Button, ButtonLink, type ButtonProps, type ButtonLinkProps, type ButtonVariant } from "./Button";
+export { Button, ButtonLink, type ButtonProps, type ButtonLinkProps, type ButtonVariant, type ButtonSize } from "./Button";
 export { Chip } from "./Chip";
 export { Card, CardTitle, CardBody, type CardProps } from "./Card";
 export { StatTile, type StatTileProps } from "./StatTile";

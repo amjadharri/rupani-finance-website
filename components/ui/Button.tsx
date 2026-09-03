@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export type ButtonVariant = "primary" | "navy" | "on-dark" | "outline-on-dark" | "link";
+export type ButtonVariant = "primary" | "navy" | "outline" | "on-dark" | "outline-on-dark" | "link";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-brand-blue text-brand-on-dark hover:bg-brand-blue-deep",
   navy: "bg-brand-red text-brand-on-dark hover:opacity-90",
+  // Navy rule on white — the secondary action in the chat launcher.
+  outline:
+    "border border-brand-red bg-brand-white text-brand-red hover:bg-brand-red hover:text-brand-on-dark",
   // White pill with navy label — measured off the hero and the red bands.
   "on-dark": "bg-brand-white text-brand-red hover:bg-brand-on-dark-2",
   "outline-on-dark":
@@ -13,13 +16,29 @@ const variantClasses: Record<ButtonVariant, string> = {
   link: "underline underline-offset-4 hover:opacity-80",
 };
 
+export type ButtonSize = "default" | "compact";
+
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 text-label-m font-semibold transition-colors " +
+  "inline-flex items-center justify-center gap-2 font-semibold transition-colors " +
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current " +
   "disabled:pointer-events-none disabled:opacity-50";
 
-/* Rule 03: 8px radius on every button. Rule 06: 44px minimum tap target. */
-const solidClasses = "rounded-card px-6 py-3.5 min-h-11";
+/**
+ * Size lives here rather than in a caller's className: `cn` only joins strings,
+ * so an override like "py-2" would win or lose by stylesheet order, not by
+ * intent. Compact is the chat launcher's pair of buttons.
+ *
+ * Rule 03: 8px radius on every button. Rule 06: 44px minimum tap target.
+ */
+const sizeText: Record<ButtonSize, string> = {
+  default: "text-label-m",
+  compact: "text-body-s",
+};
+
+const sizeBox: Record<ButtonSize, string> = {
+  default: "rounded-card px-6 py-3.5 min-h-11",
+  compact: "rounded-card px-5 py-2 min-h-11",
+};
 
 function content(children: React.ReactNode, withArrow?: boolean) {
   return (
@@ -32,6 +51,7 @@ function content(children: React.ReactNode, withArrow?: boolean) {
 
 interface CommonProps {
   variant?: ButtonVariant;
+  size?: ButtonSize;
   withArrow?: boolean;
   className?: string;
   children: React.ReactNode;
@@ -42,6 +62,7 @@ export type ButtonLinkProps = CommonProps &
 
 export function ButtonLink({
   variant = "primary",
+  size = "default",
   withArrow,
   className,
   children,
@@ -52,7 +73,8 @@ export function ButtonLink({
       data-tap
       className={cn(
         baseClasses,
-        variant !== "link" && solidClasses,
+        sizeText[size],
+        variant !== "link" && sizeBox[size],
         variantClasses[variant],
         className,
       )}
@@ -68,6 +90,7 @@ export type ButtonProps = CommonProps &
 
 export function Button({
   variant = "primary",
+  size = "default",
   withArrow,
   className,
   children,
@@ -80,7 +103,8 @@ export function Button({
       type={type}
       className={cn(
         baseClasses,
-        variant !== "link" && solidClasses,
+        sizeText[size],
+        variant !== "link" && sizeBox[size],
         variantClasses[variant],
         className,
       )}
