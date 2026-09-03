@@ -33,6 +33,7 @@ Open http://localhost:3000.
 | `/about` | About Us |
 | `/how-it-works` | How It Works |
 | `/api/quote` | Callback request handler for the Get a Quote form |
+| `/popup-preview` | Preview harness for the shade pop-up — `noindex`, out of the sitemap |
 
 Navigation also links to `/what-we-finance`, `/who-we-serve`, `/states-we-fund`,
 `/blogs`, `/faqs`, `/testimonials`, `/contact`, `/apply`, `/become-an-agent` and

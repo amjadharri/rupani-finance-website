@@ -10,5 +10,5 @@ export { ListRow, type ListRowProps } from "./ListRow";
 export { NoteStrip } from "./NoteStrip";
 export { InputField, TextareaField, type InputFieldProps, type TextareaFieldProps } from "./Field";
 export { Accordion, type AccordionItem } from "./Accordion";
-export { Modal, type ModalProps } from "./Modal";
+export { Modal, type ModalProps, type ModalSize } from "./Modal";
 export { Skeleton } from "./Skeleton";
