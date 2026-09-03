@@ -26,10 +26,10 @@ const advantages: AccordionItem[] = [
 /** 09 / Advantages */
 export function Advantages() {
   return (
-    <Section>
+    <Section tone="tint">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <div>
-          <Eyebrow className="text-brand-blue">Advantages by using USIF services</Eyebrow>
+          <Eyebrow className="text-brand-red">Advantages by using USIF services</Eyebrow>
           <Heading className="mt-6 max-w-[380px]">Uncompromising personalized service</Heading>
           <p className="mt-8 max-w-[420px] text-body-m text-brand-ink-2">
             Our approach makes difference in projecting your business image as well as increasing

@@ -15,7 +15,8 @@ export const company = {
     city: "Houston, TX 77074",
   },
   established: "1999",
-  developedBy: "CalibreOn International",
+  developedBy: "uConnect Technologies Pvt Ltd",
+  developedByHref: "https://uconnect.pk",
 } as const;
 
 export interface NavItem {
@@ -46,6 +47,7 @@ export const primaryNav: readonly NavItem[] = [
       { label: "Testimonials", href: "/testimonials" },
     ],
   },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const footerNav = [

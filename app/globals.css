@@ -30,6 +30,13 @@
   --color-brand-on-dark: #ffffff;
   --color-brand-on-dark-2: #f6cfd2;
   --color-brand-red-on-dark: #ffc9cc;
+
+  /* Section surfaces. The boards use three: plain white, the blush
+     brand/blue-05, and a warmer tint. The last two are raw hexes in Figma. */
+  --color-surface: #ffffff;
+  --color-surface-tint: #fcf3f3;
+  /* The circular plate behind the logo lockup. */
+  --color-logo-plate: #f4f6fc;
 }
 
 /* Default mode. Only the two swapping roles are confirmed from the spec text;
@@ -59,6 +66,9 @@
   --color-brand-on-dark: var(--color-brand-on-dark);
   --color-brand-on-dark-2: var(--color-brand-on-dark-2);
   --color-brand-red-on-dark: var(--color-brand-red-on-dark);
+  --color-surface: var(--color-surface);
+  --color-surface-tint: var(--color-surface-tint);
+  --color-logo-plate: var(--color-logo-plate);
 
   --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
@@ -110,7 +120,7 @@ html {
 }
 
 body {
-  background: var(--color-brand-blue-05);
+  background: var(--color-surface);
   color: var(--color-brand-ink);
   font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.0625rem;

@@ -15,7 +15,10 @@ export function StatTile({ value, label, tone = "plain", className }: StatTilePr
     <div
       className={cn(
         tone !== "plain" && "rounded-card border p-6 md:p-8",
-        tone === "card" && "border-brand-rule bg-brand-white",
+        // Navy is the hover state on the boards, not a permanent fill.
+        tone === "card" &&
+          "border-brand-rule bg-brand-white transition-colors hover:border-brand-red " +
+            "hover:bg-brand-red [&:hover_p]:text-brand-on-dark",
         isNavy && "border-brand-red bg-brand-red text-brand-on-dark",
         className,
       )}
@@ -23,7 +26,7 @@ export function StatTile({ value, label, tone = "plain", className }: StatTilePr
       <p
         className={cn(
           "text-number font-display font-light",
-          isNavy ? "text-brand-on-dark" : "text-brand-blue",
+          isNavy ? "text-brand-on-dark" : "text-brand-blue-deep",
         )}
       >
         {value}

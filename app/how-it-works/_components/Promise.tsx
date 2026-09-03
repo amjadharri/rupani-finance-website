@@ -29,8 +29,8 @@ function CheckMark() {
 /** How It Works 05 / The USIF promise to agents */
 export function Promise() {
   return (
-    <Section flush="top">
-      <Eyebrow className="text-brand-blue">The promise</Eyebrow>
+    <Section tone="white">
+      <Eyebrow className="text-brand-red">The promise</Eyebrow>
       <Heading className="mt-8">The USIF promise to agents</Heading>
 
       <ul className="mt-12 grid gap-6 md:grid-cols-2">

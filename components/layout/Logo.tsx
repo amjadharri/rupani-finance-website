@@ -1,23 +1,28 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import mark from "@/assets/images/usif-logo.png";
 
 /**
- * Circular logo lockup — the one place radius 100 is allowed (Rule 03).
- *
- * PLACEHOLDER: the real USIF mark is not in the exported design. Drop the
- * client asset in at the same 56px circle and nothing else needs to move.
+ * The USIF lockup, exported from the Figma nav. The circular plate is the one
+ * place radius 100 is allowed (Rule 03); the mark itself sits inside it.
  */
 export function Logo({ className }: { className?: string }) {
   return (
     <span
       data-logo
       className={cn(
-        "grid h-14 w-14 shrink-0 place-items-center rounded-logo",
-        "bg-brand-white text-brand-blue ring-1 ring-brand-rule",
+        "grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-logo bg-logo-plate",
         className,
       )}
     >
-      <span className="font-display text-[13px] font-semibold tracking-tight">USIF</span>
-      <span className="sr-only">U.S. Insurance Funding</span>
+      <Image
+        src={mark}
+        alt="U.S. Insurance Funding"
+        width={56}
+        height={56}
+        priority
+        className="h-[52px] w-[52px] object-contain"
+      />
     </span>
   );
 }

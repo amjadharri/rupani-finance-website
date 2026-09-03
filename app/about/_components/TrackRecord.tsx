@@ -3,17 +3,17 @@ import { Eyebrow, Heading, Section, StatTile } from "@/components/ui";
 const stats = [
   { value: "1999", label: "serving agents and producers" },
   { value: "25", label: "years of premium financing" },
-  { value: "300+", label: "valued agents nationwide", tone: "navy" as const },
+  { value: "300+", label: "valued agents nationwide" },
   { value: "USA", label: "services anywhere in the United States" },
 ];
 
 /** About Us 03 / Track record */
 export function TrackRecord() {
   return (
-    <Section flush="top">
+    <Section tone="white">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <Eyebrow className="text-brand-blue">Our track record</Eyebrow>
+          <Eyebrow className="text-brand-red">Our track record</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">A network built over twenty-five years</Heading>
         </div>
 
@@ -31,7 +31,7 @@ export function TrackRecord() {
             key={stat.label}
             value={stat.value}
             label={stat.label}
-            tone={stat.tone ?? "card"}
+            tone="card"
           />
         ))}
       </div>

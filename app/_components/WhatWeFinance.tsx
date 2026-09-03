@@ -7,7 +7,6 @@ interface FinanceCard {
   number: string;
   title: string;
   body: string;
-  tone?: "surface" | "navy";
 }
 
 const cards: FinanceCard[] = [
@@ -30,7 +29,6 @@ const cards: FinanceCard[] = [
     number: "05",
     title: "Any amount",
     body: "Our financing programmes are specially designed to meet all types of requirements for any amount.",
-    tone: "navy",
   },
   {
     number: "04",
@@ -42,10 +40,10 @@ const cards: FinanceCard[] = [
 /** 04 / What we finance — five cards plus a photo tile in a three-column grid. */
 export function WhatWeFinance() {
   return (
-    <Section flush="top">
+    <Section tone="blush">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <Eyebrow className="text-brand-blue">What we finance</Eyebrow>
+          <Eyebrow className="text-brand-blue-deep">What we finance</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">Cover for every kind of policy</Heading>
         </div>
 
@@ -71,7 +69,7 @@ export function WhatWeFinance() {
           src={whatWeFinance}
           alt="A family sheltering under a roof shape"
           sizes="(max-width: 768px) 100vw, 400px"
-          className="min-h-[248px]"
+          className="h-full min-h-[300px]"
         />
 
         {cards.slice(2).map((card) => (
@@ -83,21 +81,15 @@ export function WhatWeFinance() {
 }
 
 function FinanceTile({ card }: { card: FinanceCard }) {
-  const isNavy = card.tone === "navy";
-
   return (
-    <Card tone={card.tone ?? "surface"} className="flex min-h-[248px] flex-col">
+    <Card interactive className="flex h-full min-h-[300px] flex-col">
       <div className="flex items-start justify-between">
-        <PolicyIcon className={isNavy ? "text-brand-on-dark" : "text-brand-blue"} />
-        <span className={isNavy ? "text-body-m text-brand-on-dark-2" : "text-body-m text-brand-ink-2"}>
-          {card.number}
-        </span>
+        <PolicyIcon className="text-brand-blue-deep" />
+        <span className="text-body-m text-brand-ink-2">{card.number}</span>
       </div>
 
       <CardTitle className="mt-auto pt-10">{card.title}</CardTitle>
-      <CardBody className={isNavy ? "mt-3 text-brand-on-dark-2" : "mt-3 text-brand-ink-2"}>
-        {card.body}
-      </CardBody>
+      <CardBody className="mt-3 text-brand-ink-2">{card.body}</CardBody>
     </Card>
   );
 }

@@ -47,7 +47,17 @@ export function SiteFooter() {
         <div className="mt-14 border-t border-brand-on-dark/20 pt-8">
           <div className="flex flex-col gap-2 text-body-s text-brand-on-dark-2 md:flex-row md:items-center md:justify-between">
             <p>&copy; {new Date().getFullYear()} US Insurance Fundings. All Rights Reserved.</p>
-            <p>Developed by {company.developedBy}</p>
+            <p>
+              Developed by{" "}
+              <a
+                href={company.developedByHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-brand-on-dark"
+              >
+                {company.developedBy}
+              </a>
+            </p>
           </div>
         </div>
       </Container>

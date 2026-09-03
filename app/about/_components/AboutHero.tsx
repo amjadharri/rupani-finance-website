@@ -13,7 +13,7 @@ const facts = [
 /** About Us 01 / Hero — light navigation on the page fill, offset red block behind the photo. */
 export function AboutHero() {
   return (
-    <section className="bg-brand-blue-05">
+    <section className="bg-surface-tint">
       <SiteHeader tone="light" />
 
       <Container className="pb-16 pt-10 md:pb-32">

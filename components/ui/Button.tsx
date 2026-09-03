@@ -6,9 +6,10 @@ export type ButtonVariant = "primary" | "navy" | "on-dark" | "outline-on-dark" |
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-brand-blue text-brand-on-dark hover:bg-brand-blue-deep",
   navy: "bg-brand-red text-brand-on-dark hover:opacity-90",
-  "on-dark": "bg-brand-white text-brand-blue hover:bg-brand-on-dark-2",
+  // White pill with navy label — measured off the hero and the red bands.
+  "on-dark": "bg-brand-white text-brand-red hover:bg-brand-on-dark-2",
   "outline-on-dark":
-    "border border-brand-on-dark text-brand-on-dark hover:bg-brand-on-dark hover:text-brand-blue",
+    "border border-brand-on-dark text-brand-on-dark hover:bg-brand-on-dark hover:text-brand-red",
   link: "underline underline-offset-4 hover:opacity-80",
 };
 

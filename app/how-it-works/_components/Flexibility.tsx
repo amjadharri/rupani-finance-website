@@ -21,10 +21,10 @@ const groups = [
 /** How It Works 04 / Flexibility */
 export function Flexibility() {
   return (
-    <Section id="flexibility">
+    <Section tone="tint" id="flexibility">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <Eyebrow className="text-brand-blue">Flexibility</Eyebrow>
+          <Eyebrow className="text-brand-blue-deep">Flexibility</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">Flexibility that fits your book of business</Heading>
         </div>
 
@@ -52,7 +52,7 @@ export function Flexibility() {
               <Link
                 href={group.link.href}
                 data-tap
-                className="mt-6 inline-flex items-center text-body-m text-brand-blue underline underline-offset-4"
+                className="mt-6 inline-flex items-center text-body-m text-brand-blue-deep underline underline-offset-4"
               >
                 {group.link.label}
               </Link>

@@ -11,7 +11,7 @@ const stats = [
 /** 03 / Who we are */
 export function WhoWeAre() {
   return (
-    <Section flush="top">
+    <Section tone="white">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <Media
           src={whoWeAre}

@@ -7,10 +7,10 @@ const values = ["Honesty", "Dependability", "Courtesy"];
 /** About Us 05 / How we work */
 export function HowWeWork() {
   return (
-    <Section>
+    <Section tone="white">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <div>
-          <Eyebrow className="text-brand-blue">How we work</Eyebrow>
+          <Eyebrow className="text-brand-red">How we work</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">
             A consultant to your agency not just a lender
           </Heading>

@@ -14,7 +14,6 @@ const capabilities = [
   {
     title: "Accept payments",
     body: "EFT / ACH, Credit Card, E-Payment accepted and print notices online.",
-    tone: "navy" as const,
   },
   {
     title: "Print notices online",
@@ -46,11 +45,7 @@ export function HowWeDeliver() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
-            <Card
-              key={item.title}
-              tone={item.tone ?? "on-red"}
-              className="flex min-h-[186px] flex-col"
-            >
+            <Card key={item.title} tone="on-red" interactive className="flex h-full min-h-[220px] flex-col">
               <CardTitle>{item.title}</CardTitle>
               <CardBody className="mt-3 text-brand-on-dark-2">{item.body}</CardBody>
             </Card>
@@ -61,7 +56,7 @@ export function HowWeDeliver() {
             src={howWeDeliver}
             alt="Two people shaking hands over a signed contract"
             sizes="(max-width: 768px) 100vw, 400px"
-            className="min-h-[186px]"
+            className="h-full min-h-[220px]"
           />
         </div>
       </Container>

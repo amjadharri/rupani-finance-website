@@ -1,10 +1,16 @@
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 
-type Tone = "page" | "red" | "deep-red" | "navy" | "band";
+/**
+ * Section surfaces, taken from the fills on the boards. They alternate rather
+ * than sharing one page colour, so every section paints its own background.
+ */
+type Tone = "white" | "tint" | "blush" | "red" | "deep-red" | "navy" | "band";
 
 const toneClasses: Record<Tone, string> = {
-  page: "bg-brand-blue-05 text-brand-ink",
+  white: "bg-surface text-brand-ink",
+  tint: "bg-surface-tint text-brand-ink",
+  blush: "bg-brand-blue-05 text-brand-ink",
   red: "bg-brand-charcoal text-brand-on-dark",
   "deep-red": "bg-brand-charcoal-2 text-brand-on-dark",
   navy: "bg-brand-red text-brand-on-dark",
@@ -13,28 +19,12 @@ const toneClasses: Record<Tone, string> = {
 
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   tone?: Tone;
-  /** Suppress the default vertical rhythm when a section stacks flush against its neighbour. */
-  flush?: "top" | "bottom" | "both";
 }
 
-/** Desktop sections run 128px top/bottom; mobile 64px. */
-export function Section({
-  className,
-  tone = "page",
-  flush,
-  children,
-  ...props
-}: SectionProps) {
+/** Desktop sections run 128px top/bottom; mobile 64px (03 / Space). */
+export function Section({ className, tone = "white", children, ...props }: SectionProps) {
   return (
-    <section
-      className={cn(
-        toneClasses[tone],
-        flush !== "top" && flush !== "both" && "pt-16 md:pt-32",
-        flush !== "bottom" && flush !== "both" && "pb-16 md:pb-32",
-        className,
-      )}
-      {...props}
-    >
+    <section className={cn(toneClasses[tone], "py-16 md:py-32", className)} {...props}>
       <Container>{children}</Container>
     </section>
   );

@@ -6,10 +6,10 @@ import ourRates from "@/assets/images/home/our-rates.jpg";
 export function OurRates() {
   return (
     <>
-      <Section flush="top" className="pb-12 md:pb-16">
+      <Section tone="tint" className="pb-12 md:pb-16">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
-            <Eyebrow className="text-brand-blue">Our rates</Eyebrow>
+            <Eyebrow className="text-brand-blue-deep">Our rates</Eyebrow>
             <Heading className="mt-6">Nine payments</Heading>
           </div>
 
@@ -43,7 +43,8 @@ export function OurRates() {
         </div>
       </Section>
 
-      <Container className="pb-16 md:pb-32">
+      <div className="bg-surface-tint pb-16 md:pb-32">
+        <Container>
         <div className="flex flex-col gap-8 rounded-card bg-brand-blue px-8 py-10 text-brand-on-dark md:flex-row md:items-center md:justify-between md:px-12">
           <div className="max-w-[640px]">
             <p className="font-display text-display-m font-light">
@@ -58,8 +59,9 @@ export function OurRates() {
           <ButtonLink href="/apply" variant="on-dark" className="shrink-0">
             Let&apos;s Get You Funded
           </ButtonLink>
-        </div>
-      </Container>
+          </div>
+        </Container>
+      </div>
     </>
   );
 }
