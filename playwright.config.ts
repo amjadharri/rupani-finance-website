@@ -21,10 +21,14 @@ export default defineConfig({
     { name: "webkit", use: { ...devices["Desktop Safari"] } },
   ],
 
-  webServer: {
-    command: "npm run build && npm run start",
-    url: baseURL,
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
-  },
+  // Point PLAYWRIGHT_BASE_URL at a deployment to run the suite against it
+  // instead of building and serving locally.
+  webServer: process.env.PLAYWRIGHT_BASE_URL
+    ? undefined
+    : {
+        command: "npm run build && npm run start",
+        url: baseURL,
+        reuseExistingServer: !process.env.CI,
+        timeout: 120_000,
+      },
 });
