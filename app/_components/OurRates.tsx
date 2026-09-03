@@ -1,5 +1,6 @@
 import { ButtonLink, Card, CardBody, CardTitle, Container, Eyebrow, Heading, Section } from "@/components/ui";
-import { MediaFrame, RatesTable } from "@/components/sections";
+import { Media, RatesTable } from "@/components/sections";
+import ourRates from "@/assets/images/home/our-rates.jpg";
 
 /** 07 / Our rates — rate card, supporting navy note, and a full-width red banner. */
 export function OurRates() {
@@ -31,7 +32,13 @@ export function OurRates() {
               </CardBody>
             </Card>
 
-            <MediaFrame ratio="1 / 0.62" label="A fan of US dollar notes" className="flex-1" />
+            <Media
+              fill
+              src={ourRates}
+              alt="A fan of US dollar notes"
+              sizes="(max-width: 1024px) 100vw, 420px"
+              className="min-h-[220px] flex-1"
+            />
           </div>
         </div>
       </Section>

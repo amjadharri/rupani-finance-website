@@ -1,5 +1,6 @@
 import { ButtonLink, Card, CardBody, CardTitle, Container, Eyebrow, Heading } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import howWeDeliver from "@/assets/images/home/how-we-deliver.jpg";
 
 const capabilities = [
   {
@@ -55,10 +56,12 @@ export function HowWeDeliver() {
             </Card>
           ))}
 
-          <MediaFrame
-            ratio="1 / 0.55"
-            label="Two people shaking hands over a signed contract"
-            className="h-full"
+          <Media
+            fill
+            src={howWeDeliver}
+            alt="Two people shaking hands over a signed contract"
+            sizes="(max-width: 768px) 100vw, 400px"
+            className="min-h-[186px]"
           />
         </div>
       </Container>

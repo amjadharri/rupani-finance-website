@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Chip, Eyebrow, Heading, NoteStrip, Section } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import flexibility from "@/assets/images/how-it-works/flexibility.jpg";
 
 const groups = [
   {
@@ -61,9 +62,10 @@ export function Flexibility() {
           <NoteStrip>We provide our services anywhere in the United States of America.</NoteStrip>
         </div>
 
-        <MediaFrame
-          ratio="1 / 1.02"
-          label="Two people shaking hands across a desk"
+        <Media
+          src={flexibility}
+          alt="An agent and a client shaking hands across a desk"
+          sizes="(max-width: 1024px) 100vw, 520px"
           className="lg:self-center"
         />
       </div>

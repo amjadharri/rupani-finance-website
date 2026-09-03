@@ -1,5 +1,6 @@
 import { Chip, Eyebrow, Heading, Section } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import howWeWork from "@/assets/images/about/how-we-work.jpg";
 
 const values = ["Honesty", "Dependability", "Courtesy"];
 
@@ -33,9 +34,10 @@ export function HowWeWork() {
           </ul>
         </div>
 
-        <MediaFrame
-          ratio="1 / 1.02"
-          label="Two colleagues reviewing a signed agreement"
+        <Media
+          src={howWeWork}
+          alt="Two colleagues working through an account together"
+          sizes="(max-width: 1024px) 100vw, 520px"
           className="lg:self-center"
         />
       </div>

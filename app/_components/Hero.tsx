@@ -1,13 +1,18 @@
 import { ButtonLink, Container, Eyebrow, Heading } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
 import { SiteHeader } from "@/components/layout";
+import policyReview from "@/assets/images/home/hero-1-policy-review.jpg";
+import quotesOnLaptop from "@/assets/images/home/hero-2-quotes-on-laptop.jpg";
+import agentWithClients from "@/assets/images/home/hero-3-agent-with-clients.jpg";
+import policyDocument from "@/assets/images/home/hero-4-policy-document.jpg";
+import signingPaperwork from "@/assets/images/home/hero-5-signing-paperwork.jpg";
 
-const stripImages = [
-  "Adviser reviewing a policy document",
-  "Analytics dashboard on a laptop",
-  "Agent meeting a family",
-  "Insurance agent policy paperwork",
-  "Two colleagues reviewing paperwork",
+const mosaic = [
+  { src: policyReview, alt: "An agent reviewing a policy document with a client" },
+  { src: quotesOnLaptop, alt: "Quote and account data on a laptop screen" },
+  { src: agentWithClients, alt: "An agent meeting a couple at their kitchen table" },
+  { src: policyDocument, alt: "An insurance agent policy document" },
+  { src: signingPaperwork, alt: "A homeowner signing paperwork with an agent" },
 ];
 
 /** 01 / Hero — the navigation sits inside the hero on the deep red fill. */
@@ -41,9 +46,15 @@ export function Hero() {
         </div>
 
         <ul className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-5">
-          {stripImages.map((label) => (
-            <li key={label}>
-              <MediaFrame ratio="1 / 1.15" label={label} />
+          {/* The whole strip sits above the fold on desktop, so none of it is lazy. */}
+          {mosaic.map((image) => (
+            <li key={image.alt}>
+              <Media
+                src={image.src}
+                alt={image.alt}
+                priority
+                sizes="(max-width: 768px) 50vw, 250px"
+              />
             </li>
           ))}
         </ul>

@@ -7,6 +7,9 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
+  // Next optimises images on first request, so a cold parallel run can be slow
+  // on the image-heavy boards. The assertions themselves stay tight.
+  timeout: 60_000,
   reporter: process.env.CI ? "github" : "list",
 
   use: {

@@ -57,13 +57,24 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for layer boundaries and conventions.
 
 ## Placeholders
 
-Three things need client assets before launch; all are marked `PLACEHOLDER` in code:
+Two things still need client input; both are marked `PLACEHOLDER` in code:
 
 1. `components/layout/Logo.tsx` — the real USIF mark (a 56px circle).
-2. `components/sections/MediaFrame.tsx` — greyscale photography. It holds the exact
-   aspect ratio, so dropping in `next/image` changes no layout.
-3. `app/api/quote/route.ts` — no CRM or mail transport is wired up; the handler
+2. `app/api/quote/route.ts` — no CRM or mail transport is wired up; the handler
    validates and logs.
+
+## Images
+
+`assets/images/` holds the photography exported from the Figma boards at 2x (1.5x
+for two of them), already duotoned and cropped to their frames. They are imported
+as static assets so `next/image` gets intrinsic dimensions and a blur placeholder,
+and only the optimised copies ship — nothing sits in `public/`.
+
+Two section backgrounds are **not** real photos: `08 / Get a Quote` on the homepage
+and the How It Works hero use image fills applied to the section frame itself, with
+the content drawn on top, so they cannot be exported as clean assets from a
+view-only file. Both are rendered as solid dark bands, which is close to how they
+read in the design.
 
 ## Deployment
 

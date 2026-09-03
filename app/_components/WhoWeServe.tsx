@@ -1,5 +1,6 @@
 import { ButtonLink, Eyebrow, Heading, Section } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import whoWeServe from "@/assets/images/home/who-we-serve.jpg";
 
 const audiences = [
   {
@@ -39,9 +40,10 @@ export function WhoWeServe() {
           </ButtonLink>
         </div>
 
-        <MediaFrame
-          ratio="1 / 1.05"
-          label="An agent reviewing documents on a clipboard"
+        <Media
+          src={whoWeServe}
+          alt="An agent reviewing account documents on a clipboard"
+          sizes="(max-width: 1024px) 100vw, 560px"
           className="lg:self-center"
         />
       </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container, Eyebrow, Heading } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import aboutHero from "@/assets/images/about/hero.jpg";
 import { SiteHeader } from "@/components/layout";
 
 const facts = [
@@ -57,9 +58,11 @@ export function AboutHero() {
               aria-hidden
               className="absolute left-0 top-0 hidden h-[190px] w-[190px] rounded-card bg-brand-blue lg:block"
             />
-            <MediaFrame
-              ratio="1 / 0.95"
-              label="Two advisers in conversation across a desk"
+            <Media
+              src={aboutHero}
+              alt="Two USIF advisers in conversation across a desk"
+              priority
+              sizes="(max-width: 1024px) 100vw, 480px"
               className="relative"
             />
           </div>

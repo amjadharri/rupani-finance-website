@@ -8,6 +8,10 @@ const pages = ["/", "/about", "/how-it-works"];
 for (const path of pages) {
   test(`${path} has no horizontal overflow`, async ({ page }) => {
     await page.goto(path);
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForFunction(() =>
+      [...document.images].every((img) => img.complete || img.loading === "lazy"),
+    );
 
     const { viewport, scrollWidth } = await page.evaluate(() => ({
       viewport: window.innerWidth,

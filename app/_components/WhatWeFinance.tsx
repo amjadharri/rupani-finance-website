@@ -1,5 +1,6 @@
 import { ButtonLink, Card, CardBody, CardTitle, Eyebrow, Heading, Section } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import whatWeFinance from "@/assets/images/home/what-we-finance.jpg";
 import { PolicyIcon } from "./PolicyIcon";
 
 interface FinanceCard {
@@ -65,10 +66,12 @@ export function WhatWeFinance() {
           <FinanceTile key={card.number} card={card} />
         ))}
 
-        <MediaFrame
-          ratio="1 / 0.92"
-          label="A family sheltering under a roof shape"
-          className="h-full"
+        <Media
+          fill
+          src={whatWeFinance}
+          alt="A family sheltering under a roof shape"
+          sizes="(max-width: 768px) 100vw, 400px"
+          className="min-h-[248px]"
         />
 
         {cards.slice(2).map((card) => (

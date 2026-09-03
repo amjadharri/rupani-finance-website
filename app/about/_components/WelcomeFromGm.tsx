@@ -1,12 +1,17 @@
 import { ButtonLink, Eyebrow, Heading, Section } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import welcomeGm from "@/assets/images/about/welcome-gm.jpg";
 
 /** About Us 02 / A welcome from the General Manager. */
 export function WelcomeFromGm() {
   return (
     <Section flush="top">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
-        <MediaFrame ratio="1 / 1.12" label="Atif Javaid, General Manager" />
+        <Media
+          src={welcomeGm}
+          alt="Atif Javaid, General Manager of U.S. Insurance Funding"
+          sizes="(max-width: 1024px) 100vw, 600px"
+        />
 
         <div>
           <Eyebrow className="text-brand-blue">A welcome</Eyebrow>

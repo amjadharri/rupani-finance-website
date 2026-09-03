@@ -1,3 +1,3 @@
 export { CtaBand, type CtaBandProps } from "./CtaBand";
 export { RatesTable } from "./RatesTable";
-export { MediaFrame } from "./MediaFrame";
+export { Media, type MediaProps } from "./Media";

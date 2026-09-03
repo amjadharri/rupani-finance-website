@@ -1,5 +1,6 @@
 import { Eyebrow, Heading, Section, StatTile } from "@/components/ui";
-import { MediaFrame } from "@/components/sections";
+import { Media } from "@/components/sections";
+import whoWeAre from "@/assets/images/home/who-we-are.jpg";
 
 const stats = [
   { value: "25", label: "years" },
@@ -12,7 +13,11 @@ export function WhoWeAre() {
   return (
     <Section flush="top">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
-        <MediaFrame ratio="1 / 1.12" label="General Manager of U.S. Insurance Funding" />
+        <Media
+          src={whoWeAre}
+          alt="Atif Javaid, General Manager of U.S. Insurance Funding"
+          sizes="(max-width: 1024px) 100vw, 600px"
+        />
 
         <div>
           <Eyebrow className="text-brand-red">Who we are</Eyebrow>
