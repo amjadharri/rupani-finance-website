@@ -5,7 +5,7 @@ import welcomeGm from "@/assets/images/about/welcome-gm.jpg";
 /** About Us 02 / A welcome from the General Manager. */
 export function WelcomeFromGm() {
   return (
-    <Section tone="tint">
+    <Section tone="white">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <Media
           src={welcomeGm}

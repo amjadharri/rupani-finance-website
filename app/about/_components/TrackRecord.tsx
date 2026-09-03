@@ -10,7 +10,7 @@ const stats = [
 /** About Us 03 / Track record */
 export function TrackRecord() {
   return (
-    <Section tone="white">
+    <Section tone="tint">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Eyebrow className="text-brand-red">Our track record</Eyebrow>

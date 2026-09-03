@@ -23,7 +23,7 @@ const steps = [
 /** How It Works 02 / Apply. Approve. Keep moving. */
 export function Process() {
   return (
-    <Section tone="white">
+    <Section tone="tint">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Eyebrow className="text-brand-red">The process</Eyebrow>

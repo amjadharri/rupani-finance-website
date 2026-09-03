@@ -23,7 +23,7 @@ export function WhoWeServe() {
     <Section tone="tint">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <div>
-          <Eyebrow className="text-brand-blue-deep">Who we serve</Eyebrow>
+          <Eyebrow className="text-brand-red">Who we serve</Eyebrow>
           <Heading className="mt-6 max-w-[340px]">Built around your agency</Heading>
 
           <dl className="mt-12">

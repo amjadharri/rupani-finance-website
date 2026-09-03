@@ -9,7 +9,7 @@ export function OurRates() {
       <Section tone="tint" className="pb-12 md:pb-16">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
-            <Eyebrow className="text-brand-blue-deep">Our rates</Eyebrow>
+            <Eyebrow className="text-brand-red">Our rates</Eyebrow>
             <Heading className="mt-6">Nine payments</Heading>
           </div>
 

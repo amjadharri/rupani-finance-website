@@ -24,7 +24,7 @@ export function Flexibility() {
     <Section tone="tint" id="flexibility">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <Eyebrow className="text-brand-blue-deep">Flexibility</Eyebrow>
+          <Eyebrow className="text-brand-red">Flexibility</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">Flexibility that fits your book of business</Heading>
         </div>
 

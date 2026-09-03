@@ -7,7 +7,7 @@ const values = ["Honesty", "Dependability", "Courtesy"];
 /** About Us 05 / How we work */
 export function HowWeWork() {
   return (
-    <Section tone="white">
+    <Section tone="tint">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <div>
           <Eyebrow className="text-brand-red">How we work</Eyebrow>
