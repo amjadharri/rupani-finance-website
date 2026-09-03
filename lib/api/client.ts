@@ -22,7 +22,8 @@ type RequestOptions = RequestInit & {
  * are defined in exactly one place.
  */
 async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
-  const url = path.startsWith("http") ? path : `${publicEnv.apiUrl}${path}`;
+  const base = publicEnv.apiUrl;
+  const url = path.startsWith("http") ? path : `${base}${path}`;
 
   const response = await fetch(url, {
     ...options,
