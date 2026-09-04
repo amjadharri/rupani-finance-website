@@ -19,6 +19,13 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  // The nav and footer both point at /resources, and the Blogs board is that
+  // page — it is titled "Resources" and its breadcrumb reads Home / Resources.
+  // One page, one URL, so the other name redirects rather than duplicating it.
+  async redirects() {
+    return [{ source: "/resources", destination: "/blogs", permanent: false }];
+  },
+
   async headers() {
     return [
       {

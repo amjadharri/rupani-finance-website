@@ -3,7 +3,20 @@ import { expect, test } from "@playwright/test";
 /** The 390 mobile board. Viewport only — a device preset would force a browser type. */
 test.use({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 3 });
 
-const pages = ["/", "/about", "/how-it-works"];
+const pages = [
+  "/",
+  "/about",
+  "/how-it-works",
+  "/what-we-finance",
+  "/who-we-serve",
+  "/states-we-fund",
+  "/why-choose-usif",
+  "/blogs",
+  "/blogs/agents-dont-have-to-fear-premium-financing",
+  "/faqs",
+  "/testimonials",
+  "/contact",
+];
 
 for (const path of pages) {
   test(`${path} has no horizontal overflow`, async ({ page }) => {
@@ -30,7 +43,9 @@ test("mobile navigation opens and links through", async ({ page }) => {
   const nav = page.locator("#mobile-nav");
   await expect(nav).toBeVisible();
 
-  await nav.getByRole("link", { name: "About Us", exact: true }).click();
+  // About Us appears twice in the mobile panel: the section link and the same
+  // destination inside its submenu. The first is the section link.
+  await nav.getByRole("link", { name: "About Us", exact: true }).first().click();
   await expect(page).toHaveURL(/\/about$/);
 });
 
@@ -56,22 +71,24 @@ test("Rule 06: tap targets are at least 44px tall", async ({ page }) => {
   expect(undersized).toEqual([]);
 });
 
-test("Rule 02: no text below 16px", async ({ page }) => {
-  await page.goto("/");
+for (const path of pages) {
+  test(`Rule 02: no text below 16px on ${path}`, async ({ page }) => {
+    await page.goto(path);
 
-  const tooSmall = await page.evaluate(() => {
-    const selector = "p,a,span,li,td,th,label,h1,h2,h3,button,dt,dd";
-    return [...document.querySelectorAll(selector)]
-      .filter((el) => {
-        const hasOwnText = [...el.childNodes].some(
-          (n) => n.nodeType === Node.TEXT_NODE && n.textContent?.trim(),
-        );
-        if (!hasOwnText) return false;
-        if (el.closest("[data-logo]")) return false;
-        return parseFloat(getComputedStyle(el).fontSize) < 16;
-      })
-      .map((el) => `${getComputedStyle(el).fontSize} "${el.textContent?.trim().slice(0, 30)}"`);
+    const tooSmall = await page.evaluate(() => {
+      const selector = "p,a,span,li,td,th,label,h1,h2,h3,h4,button,dt,dd,abbr,time,strong";
+      return [...document.querySelectorAll(selector)]
+        .filter((el) => {
+          const hasOwnText = [...el.childNodes].some(
+            (n) => n.nodeType === Node.TEXT_NODE && n.textContent?.trim(),
+          );
+          if (!hasOwnText) return false;
+          if (el.closest("[data-logo]")) return false;
+          return parseFloat(getComputedStyle(el).fontSize) < 16;
+        })
+        .map((el) => `${getComputedStyle(el).fontSize} "${el.textContent?.trim().slice(0, 30)}"`);
+    });
+
+    expect(tooSmall).toEqual([]);
   });
-
-  expect(tooSmall).toEqual([]);
-});
+}

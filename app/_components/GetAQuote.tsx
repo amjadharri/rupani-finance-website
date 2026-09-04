@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Button, Card, Container, InputField, TextareaField } from "@/components/ui";
+import { Button, Card, Container } from "@/components/ui";
+import { QuoteFields } from "@/components/sections/QuoteFields";
 import { useSubmitQuote } from "@/hooks";
 
 /**
@@ -40,14 +41,7 @@ export function GetAQuote() {
           </p>
 
           <form key={formKey} onSubmit={onSubmit} className="mt-8 flex flex-col gap-6">
-            <div className="grid gap-6 md:grid-cols-2">
-              <InputField label="Full Name" name="fullName" placeholder="Enter full name" required autoComplete="name" />
-              <InputField label="Email" name="email" type="email" placeholder="name@agency.com" required autoComplete="email" />
-              <InputField label="Phone" name="phone" type="tel" placeholder="(000) 000-0000" autoComplete="tel" />
-              <InputField label="Subject" name="subject" placeholder="General inquiry" />
-            </div>
-
-            <TextareaField label="Tell us your question" name="question" placeholder="Write here" />
+            <QuoteFields />
 
             <Button type="submit" variant="navy" disabled={isPending} className="w-full">
               {isPending ? "Sending…" : "Get a Call Back"}

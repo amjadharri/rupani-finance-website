@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export type ButtonVariant = "primary" | "navy" | "outline" | "on-dark" | "outline-on-dark" | "link";
+export type ButtonVariant =
+  | "primary"
+  | "navy"
+  | "outline"
+  | "on-dark"
+  | "on-dark-primary"
+  | "outline-on-dark"
+  | "link";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-brand-blue text-brand-on-dark hover:bg-brand-blue-deep",
@@ -11,6 +18,10 @@ const variantClasses: Record<ButtonVariant, string> = {
     "border border-brand-red bg-brand-white text-brand-red hover:bg-brand-red hover:text-brand-on-dark",
   // White pill with navy label — measured off the hero and the red bands.
   "on-dark": "bg-brand-white text-brand-red hover:bg-brand-on-dark-2",
+  // White pill with a red label. The interior boards use this one on their red
+  // bands ("Become An Agent"); the label samples #d01c24, brand/blue, not the
+  // navy of the hero's white buttons. Both exist in the file — do not merge.
+  "on-dark-primary": "bg-brand-white text-brand-blue hover:bg-brand-on-dark-2",
   "outline-on-dark":
     "border border-brand-on-dark text-brand-on-dark hover:bg-brand-on-dark hover:text-brand-red",
   link: "underline underline-offset-4 hover:opacity-80",

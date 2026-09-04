@@ -11,13 +11,29 @@ test("homepage renders the hero, statement and rate card", async ({ page }) => {
   await expect(page.getByRole("row", { name: /\$500 – 2,000/ })).toContainText("13.00%");
 });
 
-test("primary navigation reaches About Us", async ({ page }) => {
+test("About Us menu opens and reaches About Us", async ({ page }) => {
   await page.goto("/");
 
-  await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "About Us" }).click();
+  // About Us is a menu, not a plain link: the boards draw it with a chevron and
+  // it carries Why Choose USIF. Its own page is the first item inside, the same
+  // shape Premium Financing has with How It Works.
+  const nav = page.getByRole("navigation", { name: "Main" });
+  await nav.getByRole("button", { name: "About Us" }).click();
+  await nav.getByRole("link", { name: "About Us", exact: true }).click();
 
   await expect(page).toHaveURL(/\/about$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("About U.S.");
+});
+
+test("About Us menu reaches Why Choose USIF", async ({ page }) => {
+  await page.goto("/");
+
+  const nav = page.getByRole("navigation", { name: "Main" });
+  await nav.getByRole("button", { name: "About Us" }).click();
+  await nav.getByRole("link", { name: "Why Choose USIF", exact: true }).click();
+
+  await expect(page).toHaveURL(/\/why-choose-usif$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Why Choose USIF?");
 });
 
 test("Premium Financing menu opens and reaches How It Works", async ({ page }) => {

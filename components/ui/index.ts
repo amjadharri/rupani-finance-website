@@ -1,4 +1,5 @@
 export { Container } from "./Container";
+export { Breadcrumb, type Crumb } from "./Breadcrumb";
 export { Section, type SectionProps } from "./Section";
 export { Eyebrow } from "./Eyebrow";
 export { Heading, type HeadingProps } from "./Heading";

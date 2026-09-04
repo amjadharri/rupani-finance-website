@@ -37,7 +37,14 @@ export const primaryNav: readonly NavItem[] = [
       { label: "States We Fund", href: "/states-we-fund" },
     ],
   },
-  { label: "About Us", href: "/about" },
+  {
+    label: "About Us",
+    href: "/about",
+    children: [
+      { label: "About Us", href: "/about" },
+      { label: "Why Choose USIF", href: "/why-choose-usif" },
+    ],
+  },
   {
     label: "Resources",
     href: "/resources",

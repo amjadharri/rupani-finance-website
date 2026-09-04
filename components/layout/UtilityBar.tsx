@@ -5,7 +5,7 @@ import { company } from "@/lib/config/site";
 /** 00 / Utility bar — 46px tall, grey-band fill, hairline underneath. */
 export function UtilityBar() {
   return (
-    <div className="border-b border-brand-rule bg-brand-grey-band">
+    <div data-utility-bar className="border-b border-brand-rule bg-brand-grey-band">
       <Container className="flex h-[45px] items-center justify-between">
         <a href={company.phoneHref} className="text-body-s text-brand-ink hover:underline">
           {company.phone}

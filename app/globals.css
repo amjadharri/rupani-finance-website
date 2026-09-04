@@ -183,3 +183,19 @@ html:has(dialog[data-modal][open]) {
     animation: none;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Utility bar over a blush hero.
+
+   brand/grey-band and brand/blue-05 are the same value in Red-led (#fdedee),
+   so on an interior page the bar and the hero underneath it are one colour and
+   only the hairline separates them. The interior boards draw the bar white for
+   exactly that reason; the Homepage board, whose hero is red, keeps the
+   grey-band. The bar is mounted once in the root layout and cannot be told
+   which page it is above, so the page tells it, the same way the shade rule
+   above reaches ::backdrop through :has().
+--------------------------------------------------------------------------- */
+
+body:has(main [data-hero="blush"]) [data-utility-bar] {
+  background: var(--color-brand-white);
+}

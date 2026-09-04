@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Button, InputField, Modal, TextareaField } from "@/components/ui";
+import { Button, Modal } from "@/components/ui";
+import { QuoteFields } from "./QuoteFields";
 import { company } from "@/lib/config/site";
 
 /**
@@ -61,14 +62,7 @@ export function QuotePopup({ open, onClose }: { open: boolean; onClose: () => vo
         </div>
       ) : (
         <form onSubmit={onSubmit} className="flex flex-col gap-6">
-          <div className="grid gap-6 md:grid-cols-2">
-            <InputField label="Full Name" name="fullName" placeholder="Enter full name" required autoComplete="name" />
-            <InputField label="Email" name="email" type="email" placeholder="name@agency.com" required autoComplete="email" />
-            <InputField label="Phone" name="phone" type="tel" placeholder="(000) 000-0000" autoComplete="tel" />
-            <InputField label="Subject" name="subject" placeholder="General inquiry" />
-          </div>
-
-          <TextareaField label="Tell us your question" name="question" rows={4} placeholder="Write here" />
+          <QuoteFields textareaRows={4} />
 
           <Button type="submit" variant="navy" className="w-full">
             Get a Call Back
