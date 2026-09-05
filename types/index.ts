@@ -1,1 +1,1 @@
-export type { QuoteRequest } from "@/app/api/quote/route";
+export type { QuoteRequest, QuoteResponse } from "@/lib/api/quote";

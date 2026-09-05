@@ -1,12 +1,5 @@
 import { NextResponse } from "next/server";
-
-export interface QuoteRequest {
-  fullName: string;
-  email: string;
-  phone: string;
-  subject: string;
-  question: string;
-}
+import type { QuoteRequest } from "@/lib/api/quote";
 
 function isValid(body: Partial<QuoteRequest>): body is QuoteRequest {
   return Boolean(body.fullName?.trim()) && Boolean(body.email?.trim());
