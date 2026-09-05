@@ -13,7 +13,7 @@ import { PostCard } from "./PostCard";
 
 function Panel({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-card border border-brand-rule bg-brand-white p-6">
+    <section data-reveal className="rounded-card border border-brand-rule bg-brand-white p-6">
       <h2 className="text-title-m font-semibold">{title}</h2>
       {children}
     </section>
@@ -49,7 +49,7 @@ export function BlogBrowser() {
   const isFiltered = Boolean(query.trim()) || category !== null;
 
   return (
-    <div className="grid gap-12 lg:grid-cols-[1fr_320px] lg:gap-10">
+    <div data-reveal-stagger className="grid gap-12 lg:grid-cols-[1fr_320px] lg:gap-10">
       <div>
         {matches.length === 0 ? (
           <p className="rounded-card border border-brand-rule bg-brand-white p-8 text-body-m text-brand-ink-2">

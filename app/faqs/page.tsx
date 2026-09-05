@@ -42,7 +42,7 @@ export default function FaqsPage() {
         }
       />
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
           <FaqList />
         </Container>

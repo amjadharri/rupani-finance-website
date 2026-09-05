@@ -12,7 +12,7 @@ const stats = [
 export function TrackRecord() {
   return (
     <Section tone="tint">
-      <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+      <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Eyebrow className="text-brand-red">Our track record</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">A network built over twenty-five years</Heading>
@@ -26,7 +26,8 @@ export function TrackRecord() {
         </p>
       </div>
 
-      <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+      <div data-reveal-stagger
+        className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {stats.map((stat) => (
           <StatTile
             key={stat.label}

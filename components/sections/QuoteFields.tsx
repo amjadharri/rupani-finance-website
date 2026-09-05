@@ -10,7 +10,7 @@ import { InputField, TextareaField } from "@/components/ui";
 export function QuoteFields({ textareaRows = 5 }: { textareaRows?: number }) {
   return (
     <>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div data-reveal-stagger className="grid gap-6 md:grid-cols-2">
         <InputField
           label="Full Name"
           name="fullName"

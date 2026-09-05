@@ -83,7 +83,7 @@ export function ClosingBand({
     ) : null;
 
   return (
-    <section
+    <section data-reveal
       className={cn(
         "py-16 md:py-32",
         onRed ? "bg-brand-charcoal text-brand-on-dark" : "bg-surface text-brand-ink",
@@ -91,7 +91,7 @@ export function ClosingBand({
     >
       <Container>
         {split ? (
-          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+          <div data-reveal-stagger className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <div>{copy}</div>
             {actions ? <div className="lg:pt-1">{actions}</div> : null}
           </div>

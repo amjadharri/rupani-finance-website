@@ -31,7 +31,7 @@ export function GetAQuote() {
   }
 
   return (
-    <section className="bg-brand-ink py-16 md:py-24">
+    <section data-reveal className="bg-brand-ink py-16 md:py-24">
       <Container>
         <Card tone="elevated" className="mx-auto max-w-[720px] p-8 md:p-12">
           <h2 className="text-center font-display text-display-m font-light">Get a quote today</h2>

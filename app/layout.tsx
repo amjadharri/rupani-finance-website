@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Public_Sans } from "next/font/google";
-import { ChatLauncher, SiteFooter, UtilityBar } from "@/components/layout";
+import { ChatLauncher, SiteFooter, UtilityBar, ScrollReveal } from "@/components/layout";
 import { AppProviders } from "@/providers";
 import { company } from "@/lib/config/site";
 import { publicEnv } from "@/lib/config/env";
@@ -53,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to content
           </a>
+          <ScrollReveal />
           <UtilityBar />
           <main id="main" className="flex-1">
             {children}

@@ -8,7 +8,7 @@ const values = ["Honesty", "Dependability", "Courtesy"];
 export function HowWeWork() {
   return (
     <Section tone="tint">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
+      <div data-reveal-stagger className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <div>
           <Eyebrow className="text-brand-red">How we work</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">

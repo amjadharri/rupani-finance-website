@@ -34,9 +34,9 @@ export default function StatesWeFundPage() {
         }
       />
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
+          <div data-reveal-stagger className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div>
               <Eyebrow className="text-brand-blue">Coverage nationwide</Eyebrow>
               <Heading level={2} className="mt-6">
@@ -75,7 +75,7 @@ export default function StatesWeFundPage() {
             </div>
           </div>
 
-          <ul className="mt-16 grid gap-4 border-t border-brand-rule pt-16 sm:grid-cols-2 lg:grid-cols-5">
+          <ul data-reveal-stagger className="mt-16 grid gap-4 border-t border-brand-rule pt-16 sm:grid-cols-2 lg:grid-cols-5">
             {statesAlphabetical.map((state) => (
               <li
                 key={state.abbr}
@@ -88,9 +88,9 @@ export default function StatesWeFundPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-blue-05 py-16 md:py-32">
+      <section data-reveal className="bg-brand-blue-05 py-16 md:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div data-reveal-stagger className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <Eyebrow className="text-brand-blue">Nationwide network</Eyebrow>
               <Heading level={2} className="mt-6">

@@ -42,7 +42,7 @@ const cards: FinanceCard[] = [
 export function WhatWeFinance() {
   return (
     <Section tone="blush">
-      <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+      <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Eyebrow className="text-brand-blue-deep">What we finance</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">Cover for every kind of policy</Heading>
@@ -60,7 +60,7 @@ export function WhatWeFinance() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div data-reveal-stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {cards.slice(0, 2).map((card) => (
           <FinanceTile key={card.number} card={card} />
         ))}

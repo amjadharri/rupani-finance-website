@@ -8,7 +8,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-brand-charcoal-2 text-brand-on-dark">
       <Container className="pb-9 pt-16 md:pt-[72px]">
-        <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_repeat(4,minmax(0,auto))] lg:gap-16">
+        <div data-reveal-stagger className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_repeat(4,minmax(0,auto))] lg:gap-16">
           <div className="max-w-[340px]">
             <Logo />
             <p className="mt-6 text-body-m text-brand-on-dark-2">{company.tagline}</p>

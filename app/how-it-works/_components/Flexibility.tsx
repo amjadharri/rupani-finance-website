@@ -22,7 +22,7 @@ const groups = [
 export function Flexibility() {
   return (
     <Section tone="tint" id="flexibility">
-      <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+      <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Eyebrow className="text-brand-red">Flexibility</Eyebrow>
           <Heading className="mt-6 max-w-[420px]">Flexibility that fits your book of business</Heading>
@@ -34,7 +34,7 @@ export function Flexibility() {
         </p>
       </div>
 
-      <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
+      <div data-reveal-stagger className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <div className="flex flex-col gap-10">
           {groups.map((group) => (
             <div key={group.title} className="border-t border-brand-rule pt-8">

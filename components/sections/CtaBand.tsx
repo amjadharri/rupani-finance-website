@@ -23,7 +23,7 @@ export function CtaBand({
   secondaryHref = "/contact",
 }: CtaBandProps) {
   return (
-    <section className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
+    <section data-reveal className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
       <Container className="flex flex-col items-center gap-7 text-center">
         {/* R/Display/XL — the band headline is the page-title size on the boards. */}
         <h2 className="max-w-[1000px] font-display text-display-xl font-light tracking-[-0.01em]">

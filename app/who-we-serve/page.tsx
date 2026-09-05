@@ -27,7 +27,7 @@ export default function WhoWeServePage() {
         titleSize="l"
         title="Our premium finance solutions are built to help our partners grow no matter where you sit in the distribution chain"
       >
-        <ul className="mt-16 grid gap-8 md:grid-cols-3 md:gap-10">
+        <ul data-reveal-stagger className="mt-16 grid gap-8 md:grid-cols-3 md:gap-10">
           {partners.map((partner) => (
             <li key={partner.number} className="border-t border-brand-rule pt-6">
               <p className="text-body-s text-brand-blue">{partner.number}</p>
@@ -38,7 +38,7 @@ export default function WhoWeServePage() {
       </PageHero>
 
       {/* 01 — text left, photograph right, on white. */}
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-body-s text-brand-blue">01</p>
@@ -63,7 +63,7 @@ export default function WhoWeServePage() {
 
       {/* 02 — the red band. The white button here carries a red label, not the
           navy one the homepage hero uses. */}
-      <section className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
+      <section data-reveal className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
         <Container className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-body-s text-brand-on-dark-2">02</p>
@@ -88,7 +88,7 @@ export default function WhoWeServePage() {
       </section>
 
       {/* 03 — photograph left, text right, on the blush fill. */}
-      <section className="bg-brand-blue-05 py-16 md:py-32">
+      <section data-reveal className="bg-brand-blue-05 py-16 md:py-32">
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Media
             src={insuranceCompanies}
@@ -111,7 +111,7 @@ export default function WhoWeServePage() {
         </Container>
       </section>
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
           <div className="border-t border-brand-rule pt-16">
             <Heading level={1} as="p" className="max-w-[900px]">

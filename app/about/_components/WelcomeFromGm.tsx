@@ -7,7 +7,7 @@ import { applyFormUrl } from "@/lib/config/site";
 export function WelcomeFromGm() {
   return (
     <Section tone="white">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
+      <div data-reveal-stagger className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <Media
           src={welcomeGm}
           alt="Atif Javaid, General Manager of U.S. Insurance Funding"

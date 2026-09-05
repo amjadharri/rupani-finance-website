@@ -29,9 +29,9 @@ const capabilities = [
 /** 05 / How we deliver — on the charcoal (red) band. */
 export function HowWeDeliver() {
   return (
-    <section className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
+    <section data-reveal className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
       <Container>
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+        <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow className="text-brand-on-dark-2">Our approach</Eyebrow>
             <Heading className="mt-6 max-w-[460px]">How USIF delivers premium financing</Heading>
@@ -44,7 +44,7 @@ export function HowWeDeliver() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div data-reveal-stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
             <Card key={item.title} tone="on-red" interactive className="flex h-full min-h-[220px] flex-col">
               <CardTitle>{item.title}</CardTitle>

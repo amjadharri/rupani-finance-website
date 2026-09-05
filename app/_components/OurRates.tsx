@@ -8,7 +8,7 @@ export function OurRates() {
   return (
     <>
       <Section tone="tint" className="pb-12 md:pb-16">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+        <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow className="text-brand-red">Our rates</Eyebrow>
             <Heading className="mt-6">Nine payments</Heading>
@@ -19,7 +19,7 @@ export function OurRates() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+        <div data-reveal-stagger className="mt-12 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
           <RatesTable />
 
           <div className="flex flex-col gap-6">

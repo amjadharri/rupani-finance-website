@@ -24,7 +24,7 @@ const steps = [
 export function Process() {
   return (
     <Section tone="tint">
-      <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+      <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Eyebrow className="text-brand-red">The process</Eyebrow>
           <Heading className="mt-6 max-w-[460px]">Apply today. Get approved. Keep moving.</Heading>
@@ -36,7 +36,7 @@ export function Process() {
         </p>
       </div>
 
-      <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+      <ol data-reveal-stagger className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
         {steps.map((step) => (
           <li
             key={step.number}

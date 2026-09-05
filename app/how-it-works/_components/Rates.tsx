@@ -5,12 +5,12 @@ import { standardDownpayment } from "@/lib/content/rates";
 /** How It Works 03 / Rates — on the charcoal band, with the downpayment card. */
 export function Rates() {
   return (
-    <section id="rates" className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
+    <section data-reveal id="rates" className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
       <Container>
         <Eyebrow className="text-brand-on-dark-2">Rates</Eyebrow>
         <Heading className="mt-8 max-w-[420px]">Straightforward, competitive rates</Heading>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.5fr]">
+        <div data-reveal-stagger className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.5fr]">
           <Card tone="navy" className="flex flex-col">
             <p className="text-eyebrow font-medium uppercase tracking-[0.12em] text-brand-on-dark-2">
               Standard downpayment

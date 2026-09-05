@@ -49,7 +49,7 @@ export default function WhyChooseUsifPage() {
         eyebrow="Why choose USIF"
         title="Why Choose USIF?"
       >
-        <ul className="mt-16 grid gap-x-16 sm:grid-cols-2">
+        <ul data-reveal-stagger className="mt-16 grid gap-x-16 sm:grid-cols-2">
           {reasons.map((reason) => (
             <li
               key={reason}
@@ -62,9 +62,9 @@ export default function WhyChooseUsifPage() {
         </ul>
       </PageHero>
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div data-reveal-stagger className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <Eyebrow className="text-brand-blue">In their words</Eyebrow>
               <Heading level={2} className="mt-6">
@@ -93,7 +93,7 @@ export default function WhyChooseUsifPage() {
             </figure>
           ))}
 
-          <div className="mt-16 grid gap-x-16 gap-y-12 border-t border-brand-rule pt-16 md:grid-cols-2">
+          <div data-reveal-stagger className="mt-16 grid gap-x-16 gap-y-12 border-t border-brand-rule pt-16 md:grid-cols-2">
             {whyChooseUsifStatements.map((statement) => (
               <p key={statement.id} className="text-body-m text-brand-ink-2">
                 {statement.text}
@@ -103,7 +103,7 @@ export default function WhyChooseUsifPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-blue-05 py-16 md:py-32">
+      <section data-reveal className="bg-brand-blue-05 py-16 md:py-32">
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Media
             src={corporateStrength}
@@ -139,9 +139,9 @@ export default function WhyChooseUsifPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
+      <section data-reveal className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div data-reveal-stagger className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <Eyebrow className="text-brand-red-on-dark">At the forefront</Eyebrow>
               <Heading level={2} className="mt-6">
@@ -166,7 +166,7 @@ export default function WhyChooseUsifPage() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-x-16 gap-y-10 border-t border-brand-on-dark/25 pt-12 md:grid-cols-2">
+          <div data-reveal-stagger className="mt-16 grid gap-x-16 gap-y-10 border-t border-brand-on-dark/25 pt-12 md:grid-cols-2">
             <p className="text-body-m text-brand-on-dark-2">
               The premium finance market is projected to grow from{" "}
               <strong className="font-semibold text-brand-on-dark">USD 16.26 Billion</strong> in 2025

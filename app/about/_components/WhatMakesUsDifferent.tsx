@@ -32,9 +32,9 @@ const differences = [
 /** About Us 04 / What makes USIF different — on the charcoal band. */
 export function WhatMakesUsDifferent() {
   return (
-    <section className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
+    <section data-reveal className="bg-brand-charcoal py-16 text-brand-on-dark md:py-32">
       <Container>
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+        <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow className="text-brand-on-dark-2">The difference</Eyebrow>
             <Heading className="mt-6 max-w-[380px]">What makes USIF different</Heading>

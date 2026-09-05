@@ -49,7 +49,7 @@ export default function WhatWeFinancePage() {
       />
 
       <Section tone="white">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div data-reveal-stagger className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow className="text-brand-blue">Full product &amp; coverage portfolio overview</Eyebrow>
             <Heading level={2} className="mt-6">

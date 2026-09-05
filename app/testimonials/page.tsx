@@ -40,7 +40,7 @@ export default function TestimonialsPage() {
         }
       />
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
           <Eyebrow className="text-brand-blue">Client voices</Eyebrow>
           <Heading level={2} className="mt-6">
@@ -67,9 +67,9 @@ export default function TestimonialsPage() {
 
       {/* USIF describing itself. The board is explicit that these are not
           client quotations, so they are cards and not blockquotes. */}
-      <section className="bg-brand-blue-05 py-16 md:py-32">
+      <section data-reveal className="bg-brand-blue-05 py-16 md:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div data-reveal-stagger className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <Eyebrow className="text-brand-blue">In USIF&rsquo;s own words</Eyebrow>
               <Heading level={2} className="mt-6">
@@ -83,7 +83,7 @@ export default function TestimonialsPage() {
             </p>
           </div>
 
-          <ul className="mt-12 grid gap-8 md:grid-cols-2">
+          <ul data-reveal-stagger className="mt-12 grid gap-8 md:grid-cols-2">
             {howWeWork.map((statement) => (
               <li
                 key={statement.id}
@@ -106,14 +106,14 @@ export default function TestimonialsPage() {
         secondaryHref="/contact"
       />
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
           <Eyebrow className="text-brand-blue">Share your experience</Eyebrow>
           <Heading level={2} className="mt-6">
             Tell other agents how we did
           </Heading>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div data-reveal-stagger className="mt-12 grid gap-8 lg:grid-cols-2">
             <div className="rounded-card border border-brand-rule bg-brand-white p-8 md:p-10">
               <Stars />
               <h3 className="mt-6 text-title-m font-semibold">Review us on Google</h3>

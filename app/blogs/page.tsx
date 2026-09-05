@@ -40,9 +40,9 @@ export default function BlogsPage() {
         }
       />
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div data-reveal-stagger className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <Eyebrow className="text-brand-blue">Insights</Eyebrow>
               <Heading level={2} className="mt-6">

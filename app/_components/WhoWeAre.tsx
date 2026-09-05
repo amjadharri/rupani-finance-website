@@ -12,7 +12,7 @@ const stats = [
 export function WhoWeAre() {
   return (
     <Section tone="white">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
+      <div data-reveal-stagger className="grid gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <Media
           src={whoWeAre}
           alt="Atif Javaid, General Manager of U.S. Insurance Funding"
@@ -39,7 +39,7 @@ export function WhoWeAre() {
             vehicles to the first time car buyer.
           </p>
 
-          <div className="mt-12 grid grid-cols-3 gap-6 border-t border-brand-rule pt-8">
+          <div data-reveal-stagger className="mt-12 grid grid-cols-3 gap-6 border-t border-brand-rule pt-8">
             {stats.map((stat) => (
               <StatTile key={stat.label} value={stat.value} label={stat.label} />
             ))}

@@ -12,12 +12,16 @@ const toneClasses: Record<CardTone, string> = {
 };
 
 /** Navy is the hover state on the boards, not a fill some cards happen to have. */
+const lift =
+  "transition-[color,background-color,border-color,transform,box-shadow] duration-300 " +
+  "ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5";
+
 const hoverClasses: Record<CardTone, string> = {
   surface:
-    "transition-colors hover:border-brand-red hover:bg-brand-red hover:text-brand-on-dark " +
+    lift + " hover:border-brand-red hover:bg-brand-red hover:text-brand-on-dark " +
     "[&:hover_*]:text-brand-on-dark",
   "on-red":
-    "transition-colors hover:border-brand-red hover:bg-brand-red " +
+    lift + " hover:border-brand-red hover:bg-brand-red " +
     "[&:hover_*]:text-brand-on-dark",
   navy: "",
   elevated: "",

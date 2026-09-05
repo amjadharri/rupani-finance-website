@@ -29,7 +29,7 @@ export function AboutHero() {
           </span>
         </nav>
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div data-reveal-stagger className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow className="text-brand-red">About Us</Eyebrow>
             <Heading level={1} className="mt-6">

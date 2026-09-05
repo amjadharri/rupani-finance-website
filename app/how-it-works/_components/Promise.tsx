@@ -33,7 +33,7 @@ export function Promise() {
       <Eyebrow className="text-brand-red">The promise</Eyebrow>
       <Heading className="mt-8">The USIF promise to agents</Heading>
 
-      <ul className="mt-12 grid gap-6 md:grid-cols-2">
+      <ul data-reveal-stagger className="mt-12 grid gap-6 md:grid-cols-2">
         {promises.map((promise) => (
           <li key={promise}>
             <Card className="flex h-full items-start gap-4 p-6 md:p-8">

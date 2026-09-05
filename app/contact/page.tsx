@@ -23,7 +23,7 @@ export default function ContactPage() {
         }
       />
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow className="text-brand-blue">Get in touch</Eyebrow>

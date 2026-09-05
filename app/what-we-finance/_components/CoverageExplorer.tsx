@@ -61,7 +61,7 @@ export function CoverageExplorer() {
   const family = coverageFamilies[selected];
 
   return (
-    <div className="mt-12 grid gap-12 lg:grid-cols-[400px_1fr] lg:gap-16">
+    <div data-reveal-stagger className="mt-12 grid gap-12 lg:grid-cols-[400px_1fr] lg:gap-16">
       <div>
         <ul>
           {coverageFamilies.map((item, index) => {
@@ -128,7 +128,7 @@ export function CoverageExplorer() {
               panel wherever it falls in that order. */}
           {chunk(family.entries).map((part, index) =>
             part.kind === "areas" ? (
-              <div key={`areas-${index}`} className="grid gap-6 md:grid-cols-2">
+              <div data-reveal-stagger key={`areas-${index}`} className="grid gap-6 md:grid-cols-2">
                 {part.areas.map((area) => (
                   <AreaCard key={area.title} area={area} />
                 ))}
@@ -136,7 +136,7 @@ export function CoverageExplorer() {
             ) : (
               <div key={part.group.title} className="rounded-card bg-brand-blue-05 p-6">
                 <h4 className="text-title-m font-semibold text-brand-ink">{part.group.title}</h4>
-                <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div data-reveal-stagger className="mt-6 grid gap-6 md:grid-cols-2">
                   {part.group.items.map((item) => (
                     <AreaCard key={item.title} area={item} tone="white" />
                   ))}

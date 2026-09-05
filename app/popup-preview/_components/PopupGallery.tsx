@@ -12,7 +12,7 @@ export function PopupGallery() {
 
   return (
     <>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div data-reveal-stagger className="grid gap-6 md:grid-cols-2">
         <Card tone="surface">
           <CardTitle>Get a quote</CardTitle>
           <CardBody className="mt-3 text-brand-ink-2">

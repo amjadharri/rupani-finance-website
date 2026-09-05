@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: PageProps<"/blogs/[slug]"
         />
       </PageHero>
 
-      <section className="bg-surface py-16 md:py-32">
+      <section data-reveal className="bg-surface py-16 md:py-32">
         <Container>
           <article className="mx-auto max-w-[780px]">
             {post.body ? (
@@ -147,14 +147,14 @@ export default async function BlogPostPage({ params }: PageProps<"/blogs/[slug]"
         </Container>
       </section>
 
-      <section className="bg-brand-blue-05 py-16 md:py-32">
+      <section data-reveal className="bg-brand-blue-05 py-16 md:py-32">
         <Container>
           <Eyebrow className="text-brand-blue">Insights</Eyebrow>
           <Heading level={2} className="mt-6">
             Blogs
           </Heading>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div data-reveal-stagger className="mt-12 grid gap-8 md:grid-cols-3">
             {related.map((item) => (
               <PostCard key={item.slug} post={item} />
             ))}

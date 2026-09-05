@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { applyFormUrl } from "@/lib/config/site";
 
 /** The Online Agent launcher that floats over the hero on every board. */
 test.describe("chat launcher", () => {
@@ -27,7 +28,7 @@ test.describe("chat launcher", () => {
 
     await expect(page.getByRole("link", { name: "Apply Now" }).last()).toHaveAttribute(
       "href",
-      "/apply",
+      applyFormUrl,
     );
     await expect(page.getByRole("link", { name: "I have a question" })).toHaveAttribute(
       "href",
