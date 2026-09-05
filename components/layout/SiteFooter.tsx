@@ -8,7 +8,8 @@ export function SiteFooter() {
   return (
     <footer className="bg-brand-charcoal-2 text-brand-on-dark">
       <Container className="pb-9 pt-16 md:pt-[72px]">
-        <div data-reveal-stagger className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_repeat(4,minmax(0,auto))] lg:gap-16">
+        {/* 40 between the stacked blocks on the 390 board, not 56. */}
+        <div data-reveal-stagger className="grid gap-10 md:gap-14 lg:grid-cols-[minmax(0,1fr)_repeat(4,minmax(0,auto))] lg:gap-16">
           <div className="max-w-[340px]">
             <Logo />
             <p className="mt-6 text-body-m text-brand-on-dark-2">{company.tagline}</p>
@@ -27,7 +28,11 @@ export function SiteFooter() {
               <h2 className="text-eyebrow font-medium uppercase tracking-[0.12em] text-brand-on-dark-2">
                 {column.heading}
               </h2>
-              <ul className="mt-6 flex flex-col gap-4">
+              {/* The board sets a 46 pitch between links (26 tall, 20 apart).
+                  Rule 06 already floors each row at 44 on mobile, so the rows
+                  butt up rather than adding a gap on top of the tap target —
+                  same rhythm as the board, without shrinking the target. */}
+              <ul className="mt-5 flex flex-col md:mt-6 md:gap-4">
                 {column.links.map((link) => (
                   <li key={link.label}>
                     <Link
@@ -47,7 +52,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-14 border-t border-brand-on-dark/20 pt-8">
+        <div className="mt-10 border-t border-brand-on-dark/20 pt-8 md:mt-14">
           <div className="flex flex-col gap-2 text-body-s text-brand-on-dark-2 md:flex-row md:items-center md:justify-between">
             <p>&copy; {new Date().getFullYear()} US Insurance Fundings. All Rights Reserved.</p>
             <p>
