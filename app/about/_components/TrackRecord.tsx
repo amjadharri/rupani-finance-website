@@ -1,11 +1,12 @@
 import { Eyebrow, Heading, Section, StatTile } from "@/components/ui";
 
+/** Both boards fill the third figure navy — an accent, not the hover state. */
 const stats = [
-  { value: "1999", label: "serving agents and producers" },
-  { value: "25", label: "years of premium financing" },
-  { value: "300+", label: "valued agents nationwide" },
-  { value: "USA", label: "services anywhere in the United States" },
-];
+  { value: "1999", label: "serving agents and producers", tone: "card" },
+  { value: "25", label: "years of premium financing", tone: "card" },
+  { value: "300+", label: "valued agents nationwide", tone: "navy" },
+  { value: "USA", label: "services anywhere in the United States", tone: "card" },
+] as const;
 
 /** About Us 03 / Track record */
 export function TrackRecord() {
@@ -25,13 +26,13 @@ export function TrackRecord() {
         </p>
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {stats.map((stat) => (
           <StatTile
             key={stat.label}
             value={stat.value}
             label={stat.label}
-            tone="card"
+            tone={stat.tone}
           />
         ))}
       </div>
