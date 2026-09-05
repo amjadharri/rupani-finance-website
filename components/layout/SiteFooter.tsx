@@ -32,6 +32,9 @@ export function SiteFooter() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
+                      {...(/^https?:\/\//.test(link.href)
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       data-tap
                       className="inline-flex items-center text-body-s text-brand-on-dark hover:underline"
                     >

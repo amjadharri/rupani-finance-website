@@ -1,4 +1,5 @@
 import { ButtonLink, Container } from "@/components/ui";
+import { applyFormUrl } from "@/lib/config/site";
 
 export interface CtaBandProps {
   title: string;
@@ -17,7 +18,7 @@ export function CtaBand({
   title,
   body,
   primaryLabel = "Let's Get You Funded",
-  primaryHref = "/apply",
+  primaryHref = applyFormUrl,
   secondaryLabel = "Contact Us",
   secondaryHref = "/contact",
 }: CtaBandProps) {

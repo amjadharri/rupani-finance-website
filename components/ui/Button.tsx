@@ -70,6 +70,12 @@ interface CommonProps {
   children: React.ReactNode;
 }
 
+/** An off-site destination opens in a new tab; noopener keeps it off window. */
+function externalProps(href: unknown) {
+  const isExternal = typeof href === "string" && /^https?:\/\//.test(href);
+  return isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
+}
+
 export type ButtonLinkProps = CommonProps &
   Omit<React.ComponentProps<typeof Link>, "className" | "children">;
 
@@ -91,6 +97,7 @@ export function ButtonLink({
         variantClasses[variant],
         className,
       )}
+      {...externalProps(props.href)}
       {...props}
     >
       {content(children, withArrow)}

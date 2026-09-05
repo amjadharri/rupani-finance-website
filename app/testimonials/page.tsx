@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink, Container, Eyebrow, Heading } from "@/components/ui";
 import { ClosingBand, PageHero } from "@/components/sections";
 import { clientQuotes, howWeWork } from "@/lib/content/testimonials";
+import { applyFormUrl } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -99,7 +100,7 @@ export default function TestimonialsPage() {
       <ClosingBand
         title="Ready to experience the USIF difference?"
         primaryLabel="Partner with USIF Today"
-        primaryHref="/apply"
+        primaryHref={applyFormUrl}
         primaryArrow
         secondaryLabel="Contact"
         secondaryHref="/contact"

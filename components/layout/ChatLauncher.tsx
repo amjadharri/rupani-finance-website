@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
  * face; swap the import once the real avatar comes out of Figma.
  */
 import agentAvatar from "@/assets/images/agent-avatar.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 /**
  * The Online Agent chat launcher that floats over the hero on the boards.
@@ -69,7 +70,7 @@ export function ChatLauncher({ defaultOpen = true }: { defaultOpen?: boolean }) 
           </p>
 
           <div className="flex flex-col gap-3 p-4">
-            <ButtonLink href="/apply" size="compact" onClick={() => setOpen(false)}>
+            <ButtonLink href={applyFormUrl} size="compact" onClick={() => setOpen(false)}>
               Apply Now
             </ButtonLink>
             <ButtonLink

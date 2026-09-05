@@ -1,13 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ChatLauncher } from "../ChatLauncher";
+import { applyFormUrl } from "@/lib/config/site";
 
 describe("ChatLauncher", () => {
   it("shows the greeting and both actions on load", () => {
     render(<ChatLauncher />);
 
     expect(screen.getByText(/premium finance specialist is here to help/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Apply Now" })).toHaveAttribute("href", "/apply");
+    expect(screen.getByRole("link", { name: "Apply Now" })).toHaveAttribute(
+      "href",
+      applyFormUrl,
+    );
     expect(screen.getByRole("link", { name: "I have a question" })).toHaveAttribute(
       "href",
       "/contact",

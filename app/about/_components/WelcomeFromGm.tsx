@@ -1,6 +1,7 @@
 import { ButtonLink, Eyebrow, Heading, Section } from "@/components/ui";
 import { Media } from "@/components/sections";
 import welcomeGm from "@/assets/images/about/welcome-gm.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 /** About Us 02 / A welcome from the General Manager. */
 export function WelcomeFromGm() {
@@ -40,7 +41,7 @@ export function WelcomeFromGm() {
             </p>
           </div>
 
-          <ButtonLink href="/become-an-agent" className="mt-8" withArrow>
+          <ButtonLink href={applyFormUrl} className="mt-8" withArrow>
             Become An Agent
           </ButtonLink>
         </div>

@@ -3,6 +3,7 @@ import { ButtonLink, Container, Heading } from "@/components/ui";
 import { ClosingBand, Media, PageHero } from "@/components/sections";
 import retailBrokers from "@/assets/images/who-we-serve/retail-brokers.jpg";
 import insuranceCompanies from "@/assets/images/who-we-serve/insurance-companies.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Who We Serve",
@@ -79,7 +80,7 @@ export default function WhoWeServePage() {
               competitive rates across the board.
             </p>
 
-            <ButtonLink href="/become-an-agent" variant="on-dark-primary" className="mt-8">
+            <ButtonLink href={applyFormUrl} variant="on-dark-primary" className="mt-8">
               Become An Agent
             </ButtonLink>
           </div>
@@ -124,7 +125,7 @@ export default function WhoWeServePage() {
         layout="split"
         body="No matter which of these lines your client falls under, USIF can put together a financing plan that fits  with affordable monthly payment plans and quick, dependable service. Once a contract is signed, it's processed and funded, with no unnecessary delay. If your agency writes a line of business you don't see listed here, reach out we finance far more than a page can list."
         primaryLabel="Partner with USIF Today"
-        primaryHref="/apply"
+        primaryHref={applyFormUrl}
         primaryArrow
       />
     </>

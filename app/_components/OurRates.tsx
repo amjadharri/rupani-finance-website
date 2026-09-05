@@ -1,6 +1,7 @@
 import { ButtonLink, Card, CardBody, CardTitle, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { Media, RatesTable } from "@/components/sections";
 import ourRates from "@/assets/images/home/our-rates.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 /** 07 / Our rates — rate card, supporting navy note, and a full-width red banner. */
 export function OurRates() {
@@ -56,7 +57,7 @@ export function OurRates() {
             </p>
           </div>
 
-          <ButtonLink href="/apply" variant="on-dark" className="shrink-0">
+          <ButtonLink href={applyFormUrl} variant="on-dark" className="shrink-0">
             Let&apos;s Get You Funded
           </ButtonLink>
           </div>

@@ -3,6 +3,7 @@ import { ButtonLink, Container, Eyebrow, Heading } from "@/components/ui";
 import { ClosingBand, Media, PageHero } from "@/components/sections";
 import { clientQuotes, whyChooseUsifStatements } from "@/lib/content/testimonials";
 import corporateStrength from "@/assets/images/why-choose-usif/corporate-strength.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Why Choose USIF",
@@ -131,7 +132,7 @@ export default function WhyChooseUsifPage() {
               options in order to accommodate you and the insured.
             </p>
 
-            <ButtonLink href="/apply" className="mt-8">
+            <ButtonLink href={applyFormUrl} className="mt-8">
               Let&apos;s Get You Funded
             </ButtonLink>
           </div>
@@ -148,7 +149,7 @@ export default function WhyChooseUsifPage() {
               </Heading>
 
               <ButtonLink
-                href="/become-an-agent"
+                href={applyFormUrl}
                 variant="on-dark-primary"
                 className="mt-8"
               >
@@ -189,7 +190,7 @@ export default function WhyChooseUsifPage() {
         tone="white"
         title="Ready to partner with a premium finance company that serves your state and supports your growth?"
         primaryLabel="Partner with USIF Today"
-        primaryHref="/apply"
+        primaryHref={applyFormUrl}
         primaryArrow
         secondaryLabel="Contact Us"
         secondaryHref="/contact"

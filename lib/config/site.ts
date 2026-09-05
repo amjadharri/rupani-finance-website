@@ -19,6 +19,18 @@ export const company = {
   developedByHref: "https://uconnect.pk",
 } as const;
 
+/**
+ * Funding and agent applications both go to this intake form for now — there
+ * are no /apply or /become-an-agent pages, and neither is drawn in the design
+ * file, so the buttons pointed at 404s.
+ *
+ * The share link's `usp` and `ouid` parameters are dropped deliberately: `ouid`
+ * identifies the Google account that shared the form, and it has no business
+ * being published on every page of the site.
+ */
+export const applyFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeuIUVLMpkUhkVASnKI-iXe1hgsv0aAo1TKQKjmzQzupu8n3A/viewform";
+
 export interface NavItem {
   label: string;
   href: string;
@@ -79,8 +91,8 @@ export const footerNav = [
   {
     heading: "Account",
     links: [
-      { label: "Let's Get You Funded", href: "/apply" },
-      { label: "Become an Agent", href: "/become-an-agent" },
+      { label: "Let's Get You Funded", href: applyFormUrl },
+      { label: "Become an Agent", href: applyFormUrl },
       { label: "Agent Login", href: "/login" },
     ],
   },

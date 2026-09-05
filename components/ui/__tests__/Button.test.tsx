@@ -31,11 +31,11 @@ describe("Button", () => {
   });
 
   it("renders a link variant as an anchor", () => {
-    render(<ButtonLink href="/apply">Let&apos;s Get You Funded</ButtonLink>);
+    render(<ButtonLink href="/contact">Let&apos;s Get You Funded</ButtonLink>);
 
     expect(screen.getByRole("link", { name: /Let's Get You Funded/ })).toHaveAttribute(
       "href",
-      "/apply",
+      "/contact",
     );
   });
 });

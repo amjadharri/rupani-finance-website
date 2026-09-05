@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container, Eyebrow, Heading } from "@/components/ui";
 import { ClosingBand, PageHero } from "@/components/sections";
 import { TILE_COLUMNS, states, statesAlphabetical } from "@/lib/content/states";
+import { applyFormUrl } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "States We Fund",
@@ -118,7 +119,7 @@ export default function StatesWeFundPage() {
       <ClosingBand
         title="As a key player in this expanding market, USIF is positioned to support your agency's growth with competitive rates, fast processing, and flexible payment solutions no matter where you are located."
         primaryLabel="Let's Get You Funded"
-        primaryHref="/apply"
+        primaryHref={applyFormUrl}
         secondaryLabel="Contact Us"
         secondaryHref="/contact"
       />

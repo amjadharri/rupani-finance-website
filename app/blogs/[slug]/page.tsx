@@ -7,6 +7,7 @@ import { ClosingBand, PageHero } from "@/components/sections";
 import { formatPostDate, getPost, posts, postsNewestFirst } from "@/lib/content/posts";
 import { PostCard } from "../_components";
 import { ShareRow } from "./_components";
+import { applyFormUrl } from "@/lib/config/site";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -164,7 +165,7 @@ export default async function BlogPostPage({ params }: PageProps<"/blogs/[slug]"
       <ClosingBand
         title="Contact USIF to connect with an agent in your area or to learn more about becoming a partner agent."
         primaryLabel="Become an Agent"
-        primaryHref="/become-an-agent"
+        primaryHref={applyFormUrl}
         secondaryLabel="Contact"
         secondaryHref="/contact"
       />

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Container, ButtonLink } from "@/components/ui";
-import { primaryNav } from "@/lib/config/site";
+import { primaryNav, applyFormUrl } from "@/lib/config/site";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 
@@ -96,12 +96,14 @@ export function SiteHeader({ tone = "light" }: { tone?: HeaderTone }) {
 
         <div className="flex items-center gap-6">
           <Link
-            href="/become-an-agent"
+            href={applyFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn("hidden text-nav font-medium lg:block", linkColour)}
           >
             Become an Agent
           </Link>
-          <ButtonLink href="/apply" variant={isDark ? "on-dark" : "primary"}>
+          <ButtonLink href={applyFormUrl} variant={isDark ? "on-dark" : "primary"}>
             Let&apos;s Get You Funded
           </ButtonLink>
         </div>
@@ -146,10 +148,16 @@ export function SiteHeader({ tone = "light" }: { tone?: HeaderTone }) {
               </div>
             ))}
 
-            <ButtonLink href="/apply" className="mt-4">
+            <ButtonLink href={applyFormUrl} className="mt-4">
               Let&apos;s Get You Funded
             </ButtonLink>
-            <Link href="/become-an-agent" data-tap className="flex items-center py-3 text-nav text-brand-ink">
+            <Link
+              href={applyFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-tap
+              className="flex items-center py-3 text-nav text-brand-ink"
+            >
               Become an Agent
             </Link>
             <Link href="/login" data-tap className="flex items-center py-3 text-nav text-brand-ink">

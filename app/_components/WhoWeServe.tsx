@@ -1,6 +1,7 @@
 import { ButtonLink, Eyebrow, Heading, Section } from "@/components/ui";
 import { Media } from "@/components/sections";
 import whoWeServe from "@/assets/images/home/who-we-serve.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 const audiences = [
   {
@@ -35,7 +36,7 @@ export function WhoWeServe() {
             ))}
           </dl>
 
-          <ButtonLink href="/become-an-agent" withArrow>
+          <ButtonLink href={applyFormUrl} withArrow>
             Become An Agent
           </ButtonLink>
         </div>

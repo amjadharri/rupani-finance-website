@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container, Eyebrow, Heading } from "@/components/ui";
 import { ClosingBand, PageHero } from "@/components/sections";
 import { BlogBrowser } from "./_components";
+import { applyFormUrl } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -65,7 +66,7 @@ export default function BlogsPage() {
       <ClosingBand
         title="Contact USIF to connect with an agent in your area or to learn more about becoming a partner agent."
         primaryLabel="Become an Agent"
-        primaryHref="/become-an-agent"
+        primaryHref={applyFormUrl}
         secondaryLabel="Contact"
         secondaryHref="/contact"
       />

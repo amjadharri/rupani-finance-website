@@ -4,6 +4,7 @@ import { ButtonLink, Eyebrow, Heading, Section } from "@/components/ui";
 import { ClosingBand, PageHero } from "@/components/sections";
 import heroPhoto from "@/assets/images/what-we-finance/hero.jpg";
 import { CoverageExplorer } from "./_components";
+import { applyFormUrl } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "What We Finance",
@@ -65,7 +66,7 @@ export default function WhatWeFinancePage() {
               notice the difference.
             </p>
 
-            <ButtonLink href="/apply" className="mt-8">
+            <ButtonLink href={applyFormUrl} className="mt-8">
               Let&apos;s Get You Funded
             </ButtonLink>
           </div>

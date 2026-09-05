@@ -1,6 +1,7 @@
 import { ButtonLink, Card, CardBody, CardTitle, Container, Eyebrow, Heading } from "@/components/ui";
 import { Media } from "@/components/sections";
 import howWeDeliver from "@/assets/images/home/how-we-deliver.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 const capabilities = [
   {
@@ -37,7 +38,7 @@ export function HowWeDeliver() {
           </div>
 
           <div className="lg:justify-self-end lg:self-center">
-            <ButtonLink href="/apply" variant="on-dark" withArrow>
+            <ButtonLink href={applyFormUrl} variant="on-dark" withArrow>
               Lets Get You Funded
             </ButtonLink>
           </div>

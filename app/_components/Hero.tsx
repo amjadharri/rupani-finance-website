@@ -6,6 +6,7 @@ import quotesOnLaptop from "@/assets/images/home/hero-2-quotes-on-laptop.jpg";
 import agentWithClients from "@/assets/images/home/hero-3-agent-with-clients.jpg";
 import policyDocument from "@/assets/images/home/hero-4-policy-document.jpg";
 import signingPaperwork from "@/assets/images/home/hero-5-signing-paperwork.jpg";
+import { applyFormUrl } from "@/lib/config/site";
 
 const mosaic = [
   { src: policyReview, alt: "An agent reviewing a policy document with a client" },
@@ -37,10 +38,10 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-          <ButtonLink href="/apply" variant="on-dark" withArrow className="w-full sm:w-auto">
+          <ButtonLink href={applyFormUrl} variant="on-dark" withArrow className="w-full sm:w-auto">
             Apply Now
           </ButtonLink>
-          <ButtonLink href="/apply" variant="outline-on-dark" className="w-full sm:w-auto">
+          <ButtonLink href={applyFormUrl} variant="outline-on-dark" className="w-full sm:w-auto">
             Lets Get You Funded
           </ButtonLink>
         </div>

@@ -2,6 +2,7 @@ import { ButtonLink, Card, CardBody, CardTitle, Eyebrow, Heading, Section } from
 import { Media } from "@/components/sections";
 import whatWeFinance from "@/assets/images/home/what-we-finance.jpg";
 import { PolicyIcon } from "./PolicyIcon";
+import { applyFormUrl } from "@/lib/config/site";
 
 interface FinanceCard {
   number: string;
@@ -53,7 +54,7 @@ export function WhatWeFinance() {
             Our financing programmes are specially designed to meet all types of requirements for any
             amount.
           </p>
-          <ButtonLink href="/apply" className="mt-8" withArrow>
+          <ButtonLink href={applyFormUrl} className="mt-8" withArrow>
             Let&apos;s Get You Funded
           </ButtonLink>
         </div>
