@@ -12,18 +12,12 @@ function required(name: string, value: string | undefined): string {
 }
 
 /**
- * Resolves the canonical origin. An explicit NEXT_PUBLIC_SITE_URL wins; otherwise
- * Vercel's own production URL is used so metadataBase, robots and sitemap are
- * correct on a preview or a fresh deploy without any manual configuration.
+ * Resolves the canonical origin, which metadataBase, robots and the sitemap are
+ * all built from. The deploy script sets NEXT_PUBLIC_SITE_URL; localhost is the
+ * development fallback.
  */
 function resolveSiteUrl(): string {
-  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
-
-  const vercelUrl =
-    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL ??
-    process.env.VERCEL_PROJECT_PRODUCTION_URL;
-
-  return vercelUrl ? `https://${vercelUrl}` : "http://localhost:3000";
+  return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 }
 
 /** Safe to reference from Client Components — must be NEXT_PUBLIC_*. */

@@ -96,7 +96,12 @@ read in the design.
 
 ## Deployment
 
-Serverless (Vercel/Netlify) works as-is. For containers,
-`docker build -t usif .` — the Dockerfile sets `BUILD_STANDALONE=true`.
+The site runs on a VPS as a standalone Next server behind nginx. Ship a change
+with `./deploy/vps/deploy.sh`, which syncs the source, builds on the host and
+restarts the `usif-web` unit — see `deploy/vps/` for the unit and nginx config.
+`NEXT_PUBLIC_SITE_URL` must be set at build time; the deploy script does it.
+
+For containers, `docker build -t usif .` — the Dockerfile sets
+`BUILD_STANDALONE=true`.
 
 CI runs typecheck, lint, unit tests, build and the Playwright suite on every PR.
