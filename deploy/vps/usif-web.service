@@ -1,0 +1,28 @@
+# systemd unit for the Next.js server on the GoDaddy VPS.
+# Installed to /etc/systemd/system/usif-web.service by deploy/vps/deploy.sh.
+[Unit]
+Description=U.S. Insurance Funding website (Next.js)
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/usif
+# The standalone build carries its own minimal node_modules and entrypoint.
+ExecStart=/usr/bin/node /var/www/usif/server.js
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOSTNAME=127.0.0.1
+EnvironmentFile=-/var/www/usif/.env.production
+Restart=always
+RestartSec=5
+
+# The process only ever needs to read its own directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/usif
+
+[Install]
+WantedBy=multi-user.target
