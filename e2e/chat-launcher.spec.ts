@@ -36,11 +36,18 @@ test.describe("chat launcher", () => {
     );
   });
 
-  test("does not push the mobile board sideways", async ({ page }) => {
+  test("starts collapsed on the mobile board and does not push it sideways", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/");
     await page.evaluate(() => document.fonts.ready);
 
+    // The panel would cover the hero headline and both of its buttons, so the
+    // phone gets the avatar until the visitor opens it.
+    await expect(page.getByText(/here to help/i)).toBeHidden();
+
+    const launcher = page.getByRole("button", { name: "Online Agent" });
+    await expect(launcher).toBeVisible();
+    await launcher.click();
     await expect(page.getByText(/here to help/i)).toBeVisible();
 
     const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);

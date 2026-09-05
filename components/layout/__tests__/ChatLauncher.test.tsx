@@ -5,7 +5,7 @@ import { applyFormUrl } from "@/lib/config/site";
 
 describe("ChatLauncher", () => {
   it("shows the greeting and both actions on load", () => {
-    render(<ChatLauncher />);
+    render(<ChatLauncher defaultOpen />);
 
     expect(screen.getByText(/premium finance specialist is here to help/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Apply Now" })).toHaveAttribute(
@@ -19,7 +19,7 @@ describe("ChatLauncher", () => {
   });
 
   it("collapses to the launcher and reopens from it", async () => {
-    render(<ChatLauncher />);
+    render(<ChatLauncher defaultOpen />);
 
     const launcher = screen.getByRole("button", { name: "Online Agent" });
     expect(launcher).toHaveAttribute("aria-expanded", "true");
@@ -33,7 +33,7 @@ describe("ChatLauncher", () => {
   });
 
   it("closes on Escape", async () => {
-    render(<ChatLauncher />);
+    render(<ChatLauncher defaultOpen />);
 
     await userEvent.keyboard("{Escape}");
 
@@ -45,5 +45,28 @@ describe("ChatLauncher", () => {
 
     expect(screen.queryByText(/here to help/i)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Online Agent" })).toBeInTheDocument();
+  });
+
+  it("stays collapsed on a narrow viewport", () => {
+    // The panel covers the hero headline and both CTAs at 390, so a phone gets
+    // the avatar only until the visitor asks for it.
+    window.matchMedia = ((query: string) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      addListener: () => {},
+      removeListener: () => {},
+      dispatchEvent: () => false,
+    })) as unknown as typeof window.matchMedia;
+
+    render(<ChatLauncher />);
+
+    expect(screen.queryByText(/here to help/i)).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Online Agent" })).toHaveAttribute(
+      "aria-expanded",
+      "false",
+    );
   });
 });
