@@ -18,7 +18,7 @@ const mosaic = [
 /** 01 / Hero — the navigation sits inside the hero on the deep red fill. */
 export function Hero() {
   return (
-    <section className="bg-brand-blue-deep text-brand-on-dark">
+    <section className="overflow-x-clip bg-brand-blue-deep text-brand-on-dark">
       <SiteHeader tone="dark" />
 
       <Container className="pb-9 pt-16 md:pt-20">
@@ -36,24 +36,37 @@ export function Hero() {
           surplus lines.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
-          <ButtonLink href="/apply" variant="on-dark" withArrow>
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <ButtonLink href="/apply" variant="on-dark" withArrow className="w-full sm:w-auto">
             Apply Now
           </ButtonLink>
-          <ButtonLink href="/apply" variant="outline-on-dark">
+          <ButtonLink href="/apply" variant="outline-on-dark" className="w-full sm:w-auto">
             Lets Get You Funded
           </ButtonLink>
         </div>
 
-        <ul className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-5">
+        {/* The 390 board draws the mosaic as a 788-wide strip centred at x=-199,
+            so it bleeds past both edges rather than wrapping: five 148x210
+            tiles with a 12px gap. From md it becomes the contained 5-up row. */}
+        <ul
+          className={
+            // Centred on the column, not left-aligned in it: the board puts the
+            // strip at x=-199 on a 390 board, i.e. 788 centred on the 350
+            // content column, bleeding equally past both edges.
+            "mt-16 relative left-1/2 -translate-x-1/2 flex w-[788px] max-w-none gap-3 " +
+            "md:left-auto md:translate-x-0 md:grid md:w-auto md:grid-cols-5 md:gap-5"
+          }
+        >
           {/* The whole strip sits above the fold on desktop, so none of it is lazy. */}
           {mosaic.map((image) => (
-            <li key={image.alt}>
+            <li key={image.alt} className="w-[148px] shrink-0 md:w-auto">
               <Media
                 src={image.src}
                 alt={image.alt}
+                fill
                 priority
-                sizes="(max-width: 768px) 50vw, 250px"
+                sizes="(max-width: 768px) 148px, 250px"
+                className="h-[210px] md:h-auto md:aspect-[148/210]"
               />
             </li>
           ))}

@@ -94,8 +94,11 @@ export function SiteHeader({ tone = "light" }: { tone?: HeaderTone }) {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-6 lg:flex">
-          <Link href="/become-an-agent" className={cn("text-nav font-medium", linkColour)}>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/become-an-agent"
+            className={cn("hidden text-nav font-medium lg:block", linkColour)}
+          >
             Become an Agent
           </Link>
           <ButtonLink href="/apply" variant={isDark ? "on-dark" : "primary"}>

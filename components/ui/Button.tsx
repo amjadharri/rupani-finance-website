@@ -42,12 +42,14 @@ const baseClasses =
  * Rule 03: 8px radius on every button. Rule 06: 44px minimum tap target.
  */
 const sizeText: Record<ButtonSize, string> = {
-  default: "text-label-m",
+  // The mobile board sets E/Label/M at 16/22; the desktop board at 18/22.
+  default: "text-[1rem]/[1.375rem] lg:text-label-m",
   compact: "text-body-s",
 };
 
 const sizeBox: Record<ButtonSize, string> = {
-  default: "rounded-card px-6 py-3.5 min-h-11",
+  // 26/15 padding on the 390 board (52 tall), 24/14 on 1440.
+  default: "rounded-card px-[26px] py-[15px] min-h-13 lg:px-6 lg:py-3.5 lg:min-h-11",
   compact: "rounded-card px-5 py-2 min-h-11",
 };
 
