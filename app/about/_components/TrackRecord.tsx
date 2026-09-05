@@ -12,10 +12,10 @@ const stats = [
 export function TrackRecord() {
   return (
     <Section tone="tint">
-      <div data-reveal-stagger className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+      <div data-reveal-stagger className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Eyebrow className="text-brand-red">Our track record</Eyebrow>
-          <Heading className="mt-6 max-w-[420px]">A network built over twenty-five years</Heading>
+          <Heading className="mt-5 max-w-[420px] md:mt-6">A network built over twenty-five years</Heading>
         </div>
 
         <p className="text-body-m text-brand-ink-2 lg:self-center">
